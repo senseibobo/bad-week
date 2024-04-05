@@ -11,11 +11,10 @@ enum State {
 var state: int = State.IDLE
 var previous_state = null
 
-@onready var parent = get_parent()
+@onready var parent: Enemy = get_parent()
 
 
 func _physics_process(delta):
-	#if state != null:
 	_state_logic(delta)
 	var transition = _get_transition(delta)
 	if transition != null:

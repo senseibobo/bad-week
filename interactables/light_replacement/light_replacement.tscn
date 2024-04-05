@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8k4ay7antfin"]
+
+[ext_resource type="Script" path="res://interactables/light_replacement/light_replacement.gd" id="1_tw0mt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7unws"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_abqf6"]
+material = SubResource("StandardMaterial3D_7unws")
+size = Vector3(0.99, 0.029, 0.029)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c4ful"]
+size = Vector3(1.295, 0.23, 0.23)
+
+[node name="LightReplacement" type="Area3D"]
+collision_layer = 5
+script = ExtResource("1_tw0mt")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+layers = 32
+mesh = SubResource("BoxMesh_abqf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_c4ful")

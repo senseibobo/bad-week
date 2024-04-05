@@ -1,3 +1,4 @@
+class_name Enemy
 extends CharacterBody3D
 
 signal died
@@ -22,6 +23,7 @@ signal got_hit
 @export var max_health: float = 5.0
 @export var sound: AudioStream
 @export var death_sound: AudioStream
+@export var blind: bool = false
 
 
 func _ready():
@@ -56,10 +58,11 @@ func should_attack():
 	return global_position.distance_to(Global.player.global_position) < attack_range
 
 func should_follow():
-	return global_position.distance_to(Global.player.global_position) < follow_range \
+	return not blind \
+		and global_position.distance_to(Global.player.global_position) < follow_range \
 		and not should_attack() \
 		and vision_raycast.is_colliding() \
-		and vision_raycast.get_collider() is Player
+		and vision_raycast.get_collider() is Player 
 	
 func hit():
 	health -= 1

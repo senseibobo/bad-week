@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://yi7ovff1ttud"]
+[gd_scene load_steps=54 format=3 uid="uid://yi7ovff1ttud"]
 
 [ext_resource type="Texture2D" uid="uid://dchtbnrlw2nfb" path="res://textures/floor.png" id="1_3t5m2"]
 [ext_resource type="Script" path="res://levels/level2_bolnica/level2_bolnica.gd" id="1_17p8i"]
@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c7wqreduhy1da" path="res://interactables/exit_door/exit_door.tscn" id="17_yx3ke"]
 [ext_resource type="PackedScene" uid="uid://cawxikitjnb88" path="res://non_interactables/flickering_light.tscn" id="19_sy23e"]
 [ext_resource type="PackedScene" uid="uid://brbrncopd8dwc" path="res://interactables/letter/letter.tscn" id="20_atob0"]
-[ext_resource type="Script" path="res://non_interactables/flickering_light.gd" id="20_om8if"]
+[ext_resource type="PackedScene" uid="uid://b8k4ay7antfin" path="res://interactables/light_replacement/light_replacement.tscn" id="21_jre5c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6yut3"]
 resource_name = "Floor"
@@ -208,14 +208,7 @@ agent_radius = 0.25
 background_energy_multiplier = 0.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.215
-volumetric_fog_albedo = Color(0.0117647, 1, 0.803922, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wx67b"]
-emission_energy_multiplier = 1.3
-
-[sub_resource type="BoxMesh" id="BoxMesh_vje74"]
-material = SubResource("StandardMaterial3D_wx67b")
-size = Vector3(0.99, 0.029, 0.029)
+volumetric_fog_albedo = Color(1, 0.619608, 0.619608, 1)
 
 [node name="Level2Bolnica" type="Node3D"]
 script = ExtResource("1_17p8i")
@@ -232,6 +225,10 @@ skeleton = NodePath("")
 
 [node name="FloorDown" type="CollisionShape3D" parent="bolnica_quad/Level3Bolnica/Layout2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0342293, -2.99423, 0)
+shape = SubResource("BoxShape3D_gsm7c")
+
+[node name="FloorDown2" type="CollisionShape3D" parent="bolnica_quad/Level3Bolnica/Layout2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0342293, 3.04102, 0)
 shape = SubResource("BoxShape3D_gsm7c")
 
 [node name="Wall1" type="CollisionShape3D" parent="bolnica_quad/Level3Bolnica/Layout2/StaticBody3D"]
@@ -397,6 +394,7 @@ spot_range = 8.338
 spot_angle = 61.69
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+visible = false
 navigation_mesh = SubResource("NavigationMesh_snm35")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -417,10 +415,10 @@ transform = Transform3D(0.0190806, 0.0766595, 0.996875, -0.970393, 0.241532, -3.
 transform = Transform3D(0.171413, 0, 0.985199, 0, 1, 0, -0.985199, 0, 0.171413, -2.50161, -1.31413, 5.00507)
 
 [node name="Closet" parent="Objects" instance=ExtResource("14_hx0x3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.20177, 0.100891, -4.49844)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.51452, 0.0436758, -4.73066)
 
 [node name="Key" parent="Objects/Closet" instance=ExtResource("15_760lw")]
-transform = Transform3D(0.0499992, -0.000271166, -5.01256e-05, 0, 0.00908861, -0.049167, 0.000275761, 0.0491663, 0.00908847, 0.188002, 0.368876, 0.0586348)
+transform = Transform3D(0.0499992, -0.000271166, -5.01256e-05, 0, 0.00908861, -0.049167, 0.000275761, 0.0491663, 0.00908847, 0.188002, 0.441829, 0.0586348)
 
 [node name="HospitalBed3" parent="Objects" instance=ExtResource("6_aqunt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.43793, -2.96737, -3.03701)
@@ -455,9 +453,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38184, -2.95589, 2.62483)
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="doctor" parent="Enemies" instance=ExtResource("4_kcmq5")]
-transform = Transform3D(-0.817818, 0, -0.575476, 0, 1, 0, 0.575476, 0, -0.817818, 3.09425, 0.0500001, 2.18429)
+transform = Transform3D(-0.707106, 0, 0.707106, 0, 1, 0, -0.707106, 0, -0.707106, 0.435894, 0.0500001, 4.51068)
 attack_range = 2.0
 follow_range = 10.0
+blind = true
 
 [node name="doctor2" parent="Enemies" instance=ExtResource("4_kcmq5")]
 transform = Transform3D(-0.312119, 0, -0.950043, 0, 1, 0, 0.950043, 0, -0.312119, -1.06764, 0.05, 1.99411)
@@ -487,33 +486,65 @@ flickering = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96981, -0.0757056, -0.512155)
 flickering = false
 
-[node name="FlickeringLight5" parent="." instance=ExtResource("19_sy23e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96981, 2.98291, -0.512155)
+[node name="FlickeringLight10" parent="." instance=ExtResource("19_sy23e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96981, 2.97123, -0.512155)
 
 [node name="FlickeringLight4" parent="." instance=ExtResource("19_sy23e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96981, -0.0757056, -3.09899)
 flickering = false
 
-[node name="FlickeringLight6" type="Node3D" parent="."]
+[node name="FlickeringLightOFF" parent="." instance=ExtResource("19_sy23e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96981, 2.98315, -3.09899)
-script = ExtResource("20_om8if")
-flickering = false
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="FlickeringLight6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0157566, 0)
-layers = 32
-cast_shadow = 0
-mesh = SubResource("BoxMesh_vje74")
+on = false
 
 [node name="letter" parent="." instance=ExtResource("20_atob0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.76299, -2.96737, 4.06753)
-text = "Dear John
-Please stop leaving your shovel on the top floor.  Thanks in advance.
-Sincerely, 
-Dr. Brown
+text = "Our electritian got sick so he wasn't able to replace these lights. If anyone else can replace them, please do.
+P.S. Only the flickering ones can be replaced, as the power is cut in the ones that are off."
 
-"
+[node name="FlickeringLight7" parent="." instance=ExtResource("19_sy23e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5908, -0.0358455, 2.95676)
+flickering = false
+
+[node name="FlickeringLight6" parent="." instance=ExtResource("19_sy23e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.59668, 2.99132, 2.70294)
+
+[node name="HeartMonitor" parent="." instance=ExtResource("8_gr38j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.78768, -0.865879, -3.07158)
+
+[node name="FlickeringLight8" parent="." instance=ExtResource("19_sy23e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.00035, -0.0630416, 3.7571)
+flickering = false
+
+[node name="OmniLight3D" parent="FlickeringLight8" index="2"]
+omni_range = 19.177
+
+[node name="LightReplacement" parent="." instance=ExtResource("21_jre5c")]
+transform = Transform3D(0.0056195, -0.999637, 0.0263699, 0.978039, -3.99891e-08, -0.208424, 0.208348, 0.0269621, 0.977683, 8.97339, -2.51815, 4.88168)
+
+[node name="LightReplacement2" parent="." instance=ExtResource("21_jre5c")]
+transform = Transform3D(0.0056195, -0.999637, 0.0263699, 0.978039, -3.99891e-08, -0.208424, 0.208348, 0.0269621, 0.977683, 8.90796, -2.51815, 4.88344)
+
+[node name="LightReplacement3" parent="." instance=ExtResource("21_jre5c")]
+transform = Transform3D(0.0056195, -0.999637, 0.0263699, 0.978039, -3.99891e-08, -0.208424, 0.208348, 0.0269621, 0.977683, 8.83594, -2.51815, 4.88538)
+
+[node name="LightReplacement4" parent="." instance=ExtResource("21_jre5c")]
+transform = Transform3D(0.0632645, -0.996475, 0.0551018, 0.978736, 0.0511541, -0.198641, 0.195122, 0.0664971, 0.978522, 8.83474, -2.51815, 4.84106)
+
+[node name="LightReplacement5" parent="." instance=ExtResource("21_jre5c")]
+transform = Transform3D(-0.045744, -0.889585, -0.454473, 0.978736, 0.0511541, -0.198641, 0.199957, -0.453896, 0.868329, 8.90099, -2.51815, 4.83927)
+
+[node name="LightReplacement6" parent="." instance=ExtResource("21_jre5c")]
+transform = Transform3D(-0.0307183, -0.920932, -0.388511, 0.978736, 0.0511541, -0.198641, 0.202809, -0.386352, 0.899778, 8.98285, -2.51815, 4.83706)
+
+[node name="FlickeringLight9" parent="." instance=ExtResource("19_sy23e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.69446, 2.90988, -4.05054)
+
+[node name="FlickeringLight5" parent="." instance=ExtResource("19_sy23e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.07525, 3.01417, 2.78161)
 
 [connection signal="entered" from="Objects/exit_door" to="." method="_on_exit_door_entered"]
+[connection signal="fixed" from="FlickeringLight5" to="Enemies/doctor" method="set" binds= ["blind", false]]
 
 [editable path="Player"]
+[editable path="FlickeringLight8"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://0othxay5tgyv" path="res://textures/srce.png" id="2_em68e"]
 [ext_resource type="AudioStream" uid="uid://n4m43cxgyy3o" path="res://sounds/heartbeep.ogg" id="3_2yq21"]
-[ext_resource type="PackedScene" uid="uid://bbyu0gbkspn0n" path="res://models/stepenice.glb" id="4_xoddp"]
+[ext_resource type="PackedScene" uid="uid://b3uf5jkr34tjs" path="res://models/srceekran.glb" id="3_uy6i2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwv3b"]
 size = Vector3(1.21875, 1.88867, 1.90601)
@@ -75,7 +75,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 2.15
 }]
 
 [node name="HeartMonitor" type="StaticBody3D" groups=["navmesh"]]
@@ -87,12 +87,19 @@ shape = SubResource("BoxShape3D_dwv3b")
 stream = ExtResource("3_2yq21")
 attenuation_model = 2
 autoplay = true
+stream_paused = true
+max_distance = 6.0
 
-[node name="srceekran2" parent="." instance=ExtResource("4_xoddp")]
+[node name="srceekran" parent="." instance=ExtResource("3_uy6i2")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="srceekran2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.97875, 0, -1, 0, -4.37114e-08, 0.500317, 0.0247167, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="srceekran"]
+transform = Transform3D(-5.00709e-08, 0, 5, 0, 1.92943, 0, -1.14549, 0, -2.18557e-07, 0.500317, 0.0247167, 0)
 sprite_frames = SubResource("SpriteFrames_x01d0")
 autoplay = "default"
-frame_progress = 0.669447
+frame_progress = 0.552913
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+light_color = Color(0.588235, 1, 0.588235, 1)
+light_energy = 0.64

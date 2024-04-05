@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cawxikitjnb88"]
+[gd_scene load_steps=13 format=3 uid="uid://cawxikitjnb88"]
 
 [ext_resource type="Script" path="res://non_interactables/flickering_light.gd" id="1_y2rm3"]
 [ext_resource type="AudioStream" uid="uid://hgwpg1jrf8og" path="res://sounds/flickering_lamp.mp3" id="2_gukja"]
@@ -12,11 +12,11 @@ emission_energy_multiplier = 1.3
 material = SubResource("StandardMaterial3D_vvlli")
 size = Vector3(1, 0.03, 0.03)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wx67b"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgm66"]
 emission_energy_multiplier = 1.3
 
 [sub_resource type="BoxMesh" id="BoxMesh_vje74"]
-material = SubResource("StandardMaterial3D_wx67b")
+material = SubResource("StandardMaterial3D_pgm66")
 size = Vector3(0.99, 0.029, 0.029)
 
 [sub_resource type="Animation" id="Animation_mexkm"]
@@ -155,7 +155,11 @@ _data = {
 "turn_on": SubResource("Animation_pdnie")
 }
 
-[node name="FlickeringLight" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_fp2a3"]
+size = Vector3(1.07056, 0.0761719, 0.0810547)
+
+[node name="FlickeringLight" type="Area3D"]
+collision_layer = 5
 script = ExtResource("1_y2rm3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -183,3 +187,7 @@ autoplay = "flicker"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 max_distance = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.020402, 0)
+shape = SubResource("BoxShape3D_fp2a3")

@@ -20,6 +20,7 @@ var has_letter: bool = false
 const JUMP_VELOCITY = 6.5
 var gravity = 30.0
 var note_timer: float = 0.0
+var lamps: int = 0
 
 @onready var camera: Camera3D = $Camera3D
 @onready var interact_raycast: RayCast3D = $Camera3D/InteractRaycast
