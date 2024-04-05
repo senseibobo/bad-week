@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://clvilpybcler0"]
+
+[ext_resource type="PackedScene" uid="uid://tjbfm6sokd4m" path="res://levels/level0/room2.tscn" id="1_pcn8a"]
+
+[node name="room3" instance=ExtResource("1_pcn8a")]
+
+[node name="bed" parent="soba" index="1"]
+dream_scene = "res://levels/level3_hodnik/level3_hodnik.tscn"
+
+[node name="letter" parent="." index="4"]
+text = "Dear Zoran,
+I am divorcing you and taking the kids.
+- your (not) wife"
+
+[editable path="Player"]

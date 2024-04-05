@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj08csvutccm6"]
+
+[ext_resource type="PackedScene" uid="uid://bbyu0gbkspn0n" path="res://models/stepenice.glb" id="1_5kj2f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8lgdo"]
+size = Vector3(1, 0.219727, 2.97669)
+
+[node name="Stairs" type="StaticBody3D" groups=["navmesh"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0.613999, 0.215722)
+shape = SubResource("BoxShape3D_8lgdo")
+
+[node name="stepenice" parent="." instance=ExtResource("1_5kj2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.767, 0)

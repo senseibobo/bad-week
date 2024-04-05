@@ -1,0 +1,101 @@
+[gd_scene load_steps=17 format=3 uid="uid://cnws67pcw6gka"]
+
+[ext_resource type="Script" path="res://levels/level0/tutorial_njiva_old.gd" id="1_uny2e"]
+[ext_resource type="Texture2D" uid="uid://b3lp4kyfubem0" path="res://textures/cgaxis_hdri_skies_01_60-1.jpg" id="2_gqoi5"]
+[ext_resource type="Texture2D" uid="uid://bymc1chin4b2d" path="res://textures/wheat.png" id="2_lb0cw"]
+[ext_resource type="PackedScene" uid="uid://b33ffx2tmr73u" path="res://player/player.tscn" id="2_x8dqy"]
+[ext_resource type="PackedScene" uid="uid://c7wqreduhy1da" path="res://interactables/exit_door/exit_door.tscn" id="4_2aj52"]
+[ext_resource type="AudioStream" uid="uid://ck024i1vdbsox" path="res://sounds/evening-birds-singing-in-spring-background-sounds-of-nature-146388.mp3" id="6_yyxcx"]
+[ext_resource type="Script" path="res://levels/level0/AudioStreamPlayer.gd" id="7_y5w1g"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7mq6y"]
+panorama = ExtResource("2_gqoi5")
+
+[sub_resource type="Sky" id="Sky_ltqln"]
+sky_material = SubResource("PanoramaSkyMaterial_7mq6y")
+
+[sub_resource type="Environment" id="Environment_3ek6t"]
+background_mode = 2
+sky = SubResource("Sky_ltqln")
+tonemap_exposure = 0.3
+glow_enabled = true
+glow_intensity = 2.35
+glow_strength = 0.3
+glow_blend_mode = 0
+glow_hdr_threshold = 1.25
+glow_hdr_scale = 1.5
+glow_hdr_luminance_cap = 3.6
+glow_map_strength = 1.0
+fog_light_energy = 3.55
+volumetric_fog_density = 0.791
+volumetric_fog_albedo = Color(0.160784, 0.2, 0.109804, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_detail_spread = 2.21914
+volumetric_fog_ambient_inject = 16.0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jpsrk"]
+data = PackedVector3Array(-150, 0.1, 150, 150, 0.1, 150, -150, -0.1, 150, 150, 0.1, 150, 150, -0.1, 150, -150, -0.1, 150, 150, 0.1, -150, -150, 0.1, -150, 150, -0.1, -150, -150, 0.1, -150, -150, -0.1, -150, 150, -0.1, -150, 150, 0.1, 150, 150, 0.1, -150, 150, -0.1, 150, 150, 0.1, -150, 150, -0.1, -150, 150, -0.1, 150, -150, 0.1, -150, -150, 0.1, 150, -150, -0.1, -150, -150, 0.1, 150, -150, -0.1, 150, -150, -0.1, -150, 150, 0.1, 150, -150, 0.1, 150, 150, 0.1, -150, -150, 0.1, 150, -150, 0.1, -150, 150, 0.1, -150, -150, -0.1, 150, 150, -0.1, 150, -150, -0.1, -150, 150, -0.1, 150, 150, -0.1, -150, -150, -0.1, -150)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_loeew"]
+load_path = "res://.godot/imported/grass.png-c637977c146fec1b1e97e5c999cb4594.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vmetx"]
+transparency = 1
+albedo_texture = SubResource("CompressedTexture2D_loeew")
+uv1_scale = Vector3(133.475, 133.475, 133.475)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wcvds"]
+material = SubResource("StandardMaterial3D_vmetx")
+size = Vector3(300, 0.2, 300)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5h7d"]
+transparency = 1
+albedo_texture = ExtResource("2_lb0cw")
+uv1_scale = Vector3(162.3, 162.3, 162.3)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_4cc2k"]
+material = SubResource("StandardMaterial3D_x5h7d")
+size = Vector3(300, 0.99, 300)
+
+[node name="TutorialNjiva" type="Node3D"]
+script = ExtResource("1_uny2e")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3ek6t")
+
+[node name="Grass" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grass"]
+shape = SubResource("ConcavePolygonShape3D_jpsrk")
+
+[node name="Grass" type="MeshInstance3D" parent="Grass"]
+mesh = SubResource("BoxMesh_wcvds")
+skeleton = NodePath("../..")
+
+[node name="Wheat" type="MeshInstance3D" parent="Grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.940326, 0)
+mesh = SubResource("BoxMesh_4cc2k")
+skeleton = NodePath("../..")
+
+[node name="Player" parent="." instance=ExtResource("2_x8dqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77262, 0.100002, 13.7544)
+
+[node name="exit_door" parent="." instance=ExtResource("4_2aj52")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.6616, 0.0999999, 0.145887)
+key_needed = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_yyxcx")
+autoplay = true
+script = ExtResource("7_y5w1g")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_yyxcx")
+autoplay = true
+
+[connection signal="entered" from="exit_door" to="." method="_on_exit_door_entered"]

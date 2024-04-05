@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh5ojdo1nqt7t"]
+
+[ext_resource type="Texture2D" uid="uid://dnfapiv7tjtbq" path="res://models/vesmasina_vesmasina.png" id="1_2fjtr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d8cxd"]
+size = Vector3(0.746094, 1.0137, 0.743896)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jsvl"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_2fjtr")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1fa1o"]
+_surfaces = [{
+"aabb": AABB(-0.54, 0.00764998, -0.54, 1.08001, 1.42001, 1.08),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 6, 0, 4, 0, 0, 0, 2, 0, 6, 0, 3, 0, 6, 0, 2, 0, 3, 0, 7, 0, 6, 0, 7, 0, 4, 0, 6, 0, 7, 0, 5, 0, 4, 0, 5, 0, 3, 0, 1, 0, 5, 0, 7, 0, 3, 0, 1, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0, 5, 0, 0, 0, 4, 0, 5, 0, 1, 0, 0, 0),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(254, 255, 254, 255, 0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 254, 255, 254, 255, 255, 255, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 254, 255, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tcuj7"]
+resource_name = "vesmasina_Cube"
+_surfaces = [{
+"aabb": AABB(-0.54, 0.00764998, -0.54, 1.08001, 1.42001, 1.08),
+"attribute_data": PackedByteArray(120, 245, 143, 80, 194, 36, 88, 52, 255, 211, 135, 55, 190, 215, 143, 80, 190, 146, 92, 248, 255, 211, 122, 228, 11, 35, 54, 145, 101, 48, 141, 43, 195, 39, 135, 55, 24, 4, 54, 145, 108, 148, 128, 233, 195, 39, 122, 228, 120, 245, 143, 144, 138, 206, 239, 51, 31, 153, 110, 1, 190, 215, 143, 144, 180, 98, 92, 248, 31, 89, 110, 1, 11, 35, 66, 114, 200, 201, 141, 43, 181, 154, 78, 32, 24, 4, 66, 114, 98, 100, 128, 233, 181, 90, 78, 32),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray(1, 0, 19, 0, 13, 0, 1, 0, 7, 0, 19, 0, 9, 0, 18, 0, 6, 0, 9, 0, 21, 0, 18, 0, 23, 0, 14, 0, 20, 0, 23, 0, 17, 0, 14, 0, 16, 0, 10, 0, 4, 0, 16, 0, 22, 0, 10, 0, 5, 0, 8, 0, 2, 0, 5, 0, 11, 0, 8, 0, 15, 0, 0, 0, 12, 0, 15, 0, 3, 0, 0, 0),
+"material": SubResource("StandardMaterial3D_8jsvl"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(254, 255, 254, 255, 0, 0, 255, 255, 254, 255, 254, 255, 0, 0, 75, 255, 254, 255, 254, 255, 0, 0, 255, 191, 254, 255, 0, 0, 0, 0, 255, 255, 254, 255, 0, 0, 0, 0, 255, 191, 254, 255, 0, 0, 0, 0, 255, 191, 254, 255, 254, 255, 255, 255, 255, 191, 254, 255, 254, 255, 255, 255, 255, 255, 254, 255, 254, 255, 255, 255, 255, 191, 254, 255, 0, 0, 255, 255, 255, 191, 254, 255, 0, 0, 255, 255, 255, 191, 254, 255, 0, 0, 255, 255, 255, 191, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 151, 254, 0, 0, 254, 255, 0, 0, 84, 213, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 84, 213, 0, 0, 254, 255, 255, 255, 255, 191, 0, 0, 254, 255, 255, 255, 75, 255, 0, 0, 254, 255, 255, 255, 84, 213, 0, 0, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 255, 255, 84, 213, 255, 191, 255, 191, 98, 192, 198, 0, 255, 127, 0, 0, 255, 191, 255, 191, 0, 0, 255, 127, 255, 127, 0, 0, 255, 255, 255, 255, 255, 127, 255, 191, 255, 127, 0, 0, 255, 255, 255, 255, 0, 0, 255, 127, 255, 127, 0, 0, 255, 191, 255, 191, 196, 192, 138, 1, 84, 213, 84, 213, 255, 191, 255, 191, 0, 0, 255, 127, 84, 213, 84, 213, 255, 255, 255, 255, 98, 192, 198, 0, 84, 213, 84, 213, 255, 255, 255, 255, 0, 0, 255, 127, 84, 213, 84, 213)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_1fa1o")
+
+[node name="washing_machine" type="Node3D"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["navmesh"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.495283, 0)
+shape = SubResource("BoxShape3D_d8cxd")
+
+[node name="vesmasina" type="Node3D" parent="."]
+
+[node name="Cube" type="MeshInstance3D" parent="vesmasina"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+mesh = SubResource("ArrayMesh_tcuj7")
+skeleton = NodePath("")

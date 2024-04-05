@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bglh3swar8w2a"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_2ea2e"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_83dd4"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_el6j2"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_2ea2e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_83dd4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.754537, 0)
+mesh = SubResource("CylinderMesh_el6j2")

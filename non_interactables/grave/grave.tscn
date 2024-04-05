@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd5fqgiibqlfg"]
+
+[ext_resource type="PackedScene" uid="uid://b1f70e5bwtmtk" path="res://models/grob.glb" id="1_i4clm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q1e3r"]
+size = Vector3(1, 4.14209, 2.28223)
+
+[node name="grave" type="Node3D"]
+
+[node name="grob" parent="." instance=ExtResource("1_i4clm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100782, 0, -0.118027)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01055, 1.57104, -0.111816)
+shape = SubResource("BoxShape3D_q1e3r")

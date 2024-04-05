@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://bn2mwyw5kqoib"]
+
+[ext_resource type="Script" path="res://non_interactables/room_door/room_door.gd" id="1_4bdd2"]
+[ext_resource type="Texture2D" uid="uid://cd4x84juosx5b" path="res://models/vrata_door.png" id="1_axsjn"]
+[ext_resource type="Script" path="res://interactables/interactable.gd" id="2_867yn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_556sd"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_axsjn")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1q6x4"]
+_surfaces = [{
+"aabb": AABB(7.45058e-09, 0, -5.96046e-08, 0.113458, 4.00001, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 6, 0, 4, 0, 0, 0, 2, 0, 6, 0, 3, 0, 6, 0, 2, 0, 3, 0, 7, 0, 6, 0, 7, 0, 4, 0, 6, 0, 7, 0, 5, 0, 4, 0, 5, 0, 3, 0, 1, 0, 5, 0, 7, 0, 3, 0, 1, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0, 5, 0, 0, 0, 4, 0, 5, 0, 1, 0, 0, 0),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(249, 255, 254, 255, 0, 0, 0, 0, 249, 255, 0, 0, 0, 0, 0, 0, 249, 255, 254, 255, 255, 255, 0, 0, 249, 255, 0, 0, 255, 255, 0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 254, 255, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dqrw0"]
+resource_name = "vrata_Cube"
+_surfaces = [{
+"aabb": AABB(7.45058e-09, 0, -5.96046e-08, 0.113458, 4.00001, 2),
+"attribute_data": PackedByteArray(111, 2, 255, 127, 111, 2, 255, 127, 148, 159, 156, 30, 111, 2, 172, 42, 111, 2, 172, 42, 255, 161, 214, 231, 111, 2, 168, 170, 111, 2, 168, 170, 39, 94, 210, 31, 111, 2, 251, 255, 111, 2, 3, 0, 89, 93, 18, 236, 3, 0, 255, 127, 3, 0, 255, 127, 56, 245, 140, 221, 3, 0, 172, 42, 3, 0, 172, 42, 56, 245, 155, 53, 3, 0, 168, 170, 3, 0, 168, 170, 211, 183, 39, 222, 3, 0, 251, 255, 3, 0, 3, 0, 211, 183, 54, 54),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray(1, 0, 19, 0, 13, 0, 1, 0, 7, 0, 19, 0, 9, 0, 18, 0, 6, 0, 9, 0, 21, 0, 18, 0, 23, 0, 14, 0, 20, 0, 23, 0, 17, 0, 14, 0, 16, 0, 10, 0, 4, 0, 16, 0, 22, 0, 10, 0, 5, 0, 8, 0, 2, 0, 5, 0, 11, 0, 8, 0, 15, 0, 0, 0, 12, 0, 15, 0, 3, 0, 0, 0),
+"material": SubResource("StandardMaterial3D_556sd"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(249, 255, 254, 255, 0, 0, 255, 255, 249, 255, 254, 255, 0, 0, 255, 191, 249, 255, 254, 255, 0, 0, 255, 191, 249, 255, 0, 0, 0, 0, 255, 255, 249, 255, 0, 0, 0, 0, 255, 191, 249, 255, 0, 0, 0, 0, 2, 192, 249, 255, 254, 255, 255, 255, 255, 127, 249, 255, 254, 255, 255, 255, 255, 191, 249, 255, 254, 255, 255, 255, 0, 192, 249, 255, 0, 0, 255, 255, 255, 127, 249, 255, 0, 0, 255, 255, 255, 191, 249, 255, 0, 0, 255, 255, 3, 192, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 255, 191, 0, 0, 254, 255, 0, 0, 201, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 201, 255, 0, 0, 254, 255, 255, 255, 255, 127, 0, 0, 254, 255, 255, 255, 255, 191, 0, 0, 254, 255, 255, 255, 201, 255, 0, 0, 0, 0, 255, 255, 255, 127, 0, 0, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 255, 255, 201, 255, 255, 255, 255, 127, 255, 255, 255, 127, 194, 128, 133, 1, 255, 255, 255, 127, 0, 0, 255, 127, 7, 130, 15, 4, 255, 127, 255, 255, 255, 255, 255, 127, 75, 129, 152, 2, 255, 127, 255, 255, 0, 0, 255, 127, 139, 130, 24, 5, 255, 255, 255, 127, 255, 255, 255, 127, 196, 255, 28, 192, 255, 255, 255, 127, 0, 0, 255, 127, 196, 255, 28, 192, 255, 127, 255, 255, 255, 255, 255, 127, 196, 255, 28, 192, 255, 127, 255, 255, 0, 0, 255, 127, 196, 255, 28, 192)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_1q6x4")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hs4te"]
+data = PackedVector3Array(0.1134, 3.9999, 0, 0, 3.9999, 2, 0, 3.9999, 0, 0.1134, 3.9999, 0, 0.1134, 3.9999, 2, 0, 3.9999, 2, 0.1134, 0, 2, 0, 3.9999, 2, 0.1134, 3.9999, 2, 0.1134, 0, 2, 0, 0, 2, 0, 3.9999, 2, 0, 0, 2, 0, 3.9999, 0, 0, 3.9999, 2, 0, 0, 2, 0, 0, 0, 0, 3.9999, 0, 0, 0, 0, 0.1134, 0, 2, 0.1134, 0, 0, 0, 0, 0, 0, 0, 2, 0.1134, 0, 2, 0.1134, 0, 0, 0.1134, 3.9999, 2, 0.1134, 3.9999, 0, 0.1134, 0, 0, 0.1134, 0, 2, 0.1134, 3.9999, 2, 0, 0, 0, 0.1134, 3.9999, 0, 0, 3.9999, 0, 0, 0, 0, 0.1134, 0, 0, 0.1134, 3.9999, 0)
+
+[node name="room_door" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.413629)
+script = ExtResource("1_4bdd2")
+
+[node name="vrata" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.293636, 0, 0.52953)
+collision_layer = 5
+script = ExtResource("2_867yn")
+
+[node name="Cube" type="MeshInstance3D" parent="vrata"]
+transform = Transform3D(0.997564, 0, 0.0697565, 0, 1, 0, -0.0697565, 0, 0.997564, -0.126342, -0.0107899, -0.250514)
+mesh = SubResource("ArrayMesh_dqrw0")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="vrata"]
+transform = Transform3D(0.997564, 0, 0.0697565, 0, 1, 0, -0.0697565, 0, 0.997564, -0.126342, -0.0107899, -0.235401)
+shape = SubResource("ConcavePolygonShape3D_hs4te")
+
+[connection signal="interacted" from="vrata" to="." method="_on_vrata_interacted"]

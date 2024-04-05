@@ -1,0 +1,183 @@
+[gd_scene load_steps=20 format=3 uid="uid://of138hj2brm3"]
+
+[ext_resource type="PackedScene" uid="uid://dq8i3ontw6ag8" path="res://models/soba.glb" id="1_fhrhc"]
+[ext_resource type="PackedScene" uid="uid://chw107qet8jdu" path="res://interactables/bed/bed.tscn" id="2_88ksk"]
+[ext_resource type="PackedScene" uid="uid://dqlb5bda3pd0v" path="res://interactables/frizider/frizider.tscn" id="3_tkw0v"]
+[ext_resource type="PackedScene" uid="uid://bh5ojdo1nqt7t" path="res://non_interactables/washing_machine/washing_machine.tscn" id="4_ws2tq"]
+[ext_resource type="PackedScene" uid="uid://qw3x263pkrsm" path="res://non_interactables/reso/Reso.tscn" id="5_dms8m"]
+[ext_resource type="PackedScene" uid="uid://dcjnrknsnye48" path="res://non_interactables/computer/computer.tscn" id="6_ne5b0"]
+[ext_resource type="PackedScene" uid="uid://m2ti76wloh5e" path="res://non_interactables/table/table.tscn" id="7_xxs41"]
+[ext_resource type="PackedScene" uid="uid://bn2mwyw5kqoib" path="res://non_interactables/room_door/room_door.tscn" id="8_antv5"]
+[ext_resource type="Script" path="res://non_interactables/room/Player_death_room.gd" id="9_5ick7"]
+[ext_resource type="Shader" path="res://player/player.gdshader" id="10_wewlq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fklpo"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ulwpk"]
+sky_material = SubResource("ProceduralSkyMaterial_fklpo")
+
+[sub_resource type="Environment" id="Environment_lyluc"]
+background_mode = 2
+sky = SubResource("Sky_ulwpk")
+tonemap_mode = 2
+tonemap_exposure = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5mqt"]
+albedo_color = Color(0.054902, 0.290196, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_wc5ol"]
+material = SubResource("StandardMaterial3D_d5mqt")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ddrgr"]
+size = Vector3(0.0317383, 2.10645, 3.26672)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4tim"]
+size = Vector3(2.23047, 2.10645, 0.0396118)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_egbte"]
+size = Vector3(2.23047, 0.499023, 3.25098)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ifvps"]
+shader = ExtResource("10_wewlq")
+shader_parameter/strength = 1.0
+
+[node name="room" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lyluc")
+
+[node name="soba" parent="." instance=ExtResource("1_fhrhc")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.12144, 0.0125426, 0.713142)
+
+[node name="bed" parent="soba" instance=ExtResource("2_88ksk")]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -0.356962, 0, -1.44888)
+
+[node name="frizider" parent="soba" instance=ExtResource("3_tkw0v")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.615198, -1.19209e-07, 0.0485901)
+
+[node name="washing_machine" parent="soba" instance=ExtResource("4_ws2tq")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, -0.641013, 0, 0.185243)
+
+[node name="Reso" parent="soba" instance=ExtResource("5_dms8m")]
+transform = Transform3D(0.0449246, 0, 0.598316, 0, 0.6, 0, -0.598316, 0, 0.0449246, -0.776379, 0.645808, 0.604198)
+
+[node name="Computer" parent="soba" instance=ExtResource("6_ne5b0")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.710845, 0.433166, -1.64516)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="soba/Computer"]
+transform = Transform3D(1.70728, 0, 0, 0, 1.52251, 0, 0, 0, 1, 0, 1.19734, 1.00774)
+mesh = SubResource("QuadMesh_wc5ol")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="soba/Computer/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -0.992066, -0.125715, 0, 0.125715, -0.992066, 0, 0, -1.02901)
+light_color = Color(0, 0.0588235, 1, 1)
+light_energy = 1.915
+spot_angle = 73.35
+
+[node name="table" parent="soba" instance=ExtResource("7_xxs41")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.675334, 0, -1.57049)
+
+[node name="room_door" parent="soba" instance=ExtResource("8_antv5")]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0.194633, -0.0125426, 1.08791)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="soba"]
+transform = Transform3D(1, -0.000139626, 0, 0.000139626, 1, 0, 0, 0, 1, -0.00137516, 1.23003, -0.524578)
+visible = false
+light_color = Color(1, 0.701961, 0.427451, 1)
+omni_range = 4.06
+
+[node name="Walls" type="StaticBody3D" parent="soba"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="soba/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00567, 0.553223, -0.386658)
+shape = SubResource("BoxShape3D_ddrgr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="soba/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99554, 0.553223, -0.386658)
+shape = SubResource("BoxShape3D_ddrgr")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="soba/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0176669, 0.553223, -2.00021)
+shape = SubResource("BoxShape3D_j4tim")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="soba/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0176669, 0.553223, 0.986362)
+shape = SubResource("BoxShape3D_j4tim")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="soba/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0201662, -0.237789, -0.330779)
+shape = SubResource("BoxShape3D_egbte")
+
+[node name="player" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66082, 1.04884, -1.87494)
+script = ExtResource("9_5ick7")
+
+[node name="Camera3D" type="Camera3D" parent="player"]
+transform = Transform3D(0.0505929, -0.837597, -0.543941, 0, 0.544639, -0.838671, 0.998719, 0.0424308, 0.0275549, 0, 0, 0)
+
+[node name="HUD" type="CanvasLayer" parent="player"]
+
+[node name="InteractLabel" type="Label" parent="player/HUD"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -27.0
+offset_right = 1.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="player/HUD"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Blood" type="ColorRect" parent="player/HUD"]
+visible = false
+material = SubResource("ShaderMaterial_ifvps")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="InteractLabel2" type="Label" parent="player/HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -27.0
+offset_right = 1.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "press e to go back to sleep"
+horizontal_alignment = 1
+vertical_alignment = 1

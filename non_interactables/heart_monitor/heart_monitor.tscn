@@ -1,0 +1,98 @@
+[gd_scene load_steps=15 format=3 uid="uid://b6mxbr1tyqm4k"]
+
+[ext_resource type="Texture2D" uid="uid://0othxay5tgyv" path="res://textures/srce.png" id="2_em68e"]
+[ext_resource type="AudioStream" uid="uid://n4m43cxgyy3o" path="res://sounds/heartbeep.ogg" id="3_2yq21"]
+[ext_resource type="PackedScene" uid="uid://bbyu0gbkspn0n" path="res://models/stepenice.glb" id="4_xoddp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dwv3b"]
+size = Vector3(1.21875, 1.88867, 1.90601)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igm3u"]
+atlas = ExtResource("2_em68e")
+region = Rect2(0, 0, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf8vv"]
+atlas = ExtResource("2_em68e")
+region = Rect2(160, 0, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khvw6"]
+atlas = ExtResource("2_em68e")
+region = Rect2(320, 0, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nic7j"]
+atlas = ExtResource("2_em68e")
+region = Rect2(0, 90, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg2ra"]
+atlas = ExtResource("2_em68e")
+region = Rect2(160, 90, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aadgp"]
+atlas = ExtResource("2_em68e")
+region = Rect2(320, 90, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypd5o"]
+atlas = ExtResource("2_em68e")
+region = Rect2(0, 180, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdh4p"]
+atlas = ExtResource("2_em68e")
+region = Rect2(160, 180, 160, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvy2x"]
+atlas = ExtResource("2_em68e")
+region = Rect2(320, 180, 160, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x01d0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igm3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wf8vv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khvw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nic7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg2ra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aadgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypd5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdh4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvy2x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="HeartMonitor" type="StaticBody3D" groups=["navmesh"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dwv3b")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_2yq21")
+attenuation_model = 2
+autoplay = true
+
+[node name="srceekran2" parent="." instance=ExtResource("4_xoddp")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="srceekran2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.97875, 0, -1, 0, -4.37114e-08, 0.500317, 0.0247167, 0)
+sprite_frames = SubResource("SpriteFrames_x01d0")
+autoplay = "default"
+frame_progress = 0.669447

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://0wrujbqt4ekb"]
+
+[ext_resource type="Texture2D" uid="uid://dy3wdinvow87x" path="res://textures/zavesa.png" id="1_yg6w4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_criri"]
+size = Vector3(1.57715, 1.45459, 0.146484)
+
+[node name="Zavesa" type="StaticBody3D" groups=["navmesh"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.772705, 0)
+shape = SubResource("BoxShape3D_criri")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.782371, 0)
+shaded = true
+texture = ExtResource("1_yg6w4")

@@ -1,0 +1,148 @@
+[gd_scene load_steps=24 format=3 uid="uid://tjbfm6sokd4m"]
+
+[ext_resource type="Script" path="res://levels/level0/room.gd" id="1_ky177"]
+[ext_resource type="PackedScene" uid="uid://dq8i3ontw6ag8" path="res://models/soba.glb" id="2_mavfl"]
+[ext_resource type="PackedScene" uid="uid://chw107qet8jdu" path="res://interactables/bed/bed.tscn" id="3_m1uhp"]
+[ext_resource type="PackedScene" uid="uid://dqlb5bda3pd0v" path="res://interactables/frizider/frizider.tscn" id="4_emt4b"]
+[ext_resource type="PackedScene" uid="uid://bh5ojdo1nqt7t" path="res://non_interactables/washing_machine/washing_machine.tscn" id="5_rr07c"]
+[ext_resource type="PackedScene" uid="uid://qw3x263pkrsm" path="res://non_interactables/reso/Reso.tscn" id="6_skv0o"]
+[ext_resource type="PackedScene" uid="uid://dcjnrknsnye48" path="res://non_interactables/computer/computer.tscn" id="7_8lj4k"]
+[ext_resource type="PackedScene" uid="uid://m2ti76wloh5e" path="res://non_interactables/table/table.tscn" id="8_r23a2"]
+[ext_resource type="PackedScene" uid="uid://bn2mwyw5kqoib" path="res://non_interactables/room_door/room_door.tscn" id="9_wu0dq"]
+[ext_resource type="PackedScene" uid="uid://b33ffx2tmr73u" path="res://player/player.tscn" id="10_oatlg"]
+[ext_resource type="PackedScene" uid="uid://bpp7sb1tnn231" path="res://interactables/sleeping_pills/sleeping_pills.tscn" id="11_n7utg"]
+[ext_resource type="PackedScene" uid="uid://brbrncopd8dwc" path="res://interactables/letter/letter.tscn" id="12_5w7mm"]
+[ext_resource type="AudioStream" uid="uid://bvk38e1xighuc" path="res://sounds/electric-hum-141075.mp3" id="13_fxp8c"]
+[ext_resource type="Script" path="res://levels/level0/AudioStreamPlayer2.gd" id="14_i10jg"]
+[ext_resource type="PackedScene" uid="uid://buiv7op0jykph" path="res://non_interactables/closet/closet.tscn" id="15_h3hav"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fklpo"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ulwpk"]
+sky_material = SubResource("ProceduralSkyMaterial_fklpo")
+
+[sub_resource type="Environment" id="Environment_lyluc"]
+background_mode = 2
+sky = SubResource("Sky_ulwpk")
+tonemap_mode = 2
+tonemap_exposure = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5mqt"]
+albedo_color = Color(0.054902, 0.290196, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_wc5ol"]
+material = SubResource("StandardMaterial3D_d5mqt")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ddrgr"]
+size = Vector3(0.0317383, 2.10645, 3.26672)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4tim"]
+size = Vector3(2.23047, 2.10645, 0.0396118)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_egbte"]
+size = Vector3(2.23047, 0.499023, 3.25098)
+
+[node name="room2" type="Node3D"]
+script = ExtResource("1_ky177")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lyluc")
+
+[node name="soba" parent="." instance=ExtResource("2_mavfl")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.12144, 0.0125426, 0.713142)
+
+[node name="bed" parent="soba" instance=ExtResource("3_m1uhp")]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -0.356962, 0, -1.44888)
+dream_scene = "res://levels/level0/tutorial_njiva.tscn"
+
+[node name="frizider" parent="soba" instance=ExtResource("4_emt4b")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.805964, -1.19209e-07, 0.357057)
+
+[node name="washing_machine" parent="soba" instance=ExtResource("5_rr07c")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, -0.788885, 0, 0.792723)
+
+[node name="Reso" parent="soba" instance=ExtResource("6_skv0o")]
+transform = Transform3D(0.0299497, 0, 0.398877, 0, 0.4, 0, -0.398877, 0, 0.0299497, -0.776379, 0.447772, 0.604198)
+
+[node name="Computer" parent="soba" instance=ExtResource("7_8lj4k")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.710845, 0.433166, -1.64516)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="soba/Computer"]
+transform = Transform3D(1.70728, 0, 0, 0, 1.52251, 0, 0, 0, 1, 0, 1.19734, 1.00774)
+mesh = SubResource("QuadMesh_wc5ol")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="soba/Computer/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -0.992066, -0.125715, 0, 0.125715, -0.992066, 0, 0, -1.02901)
+light_color = Color(0, 0.0588235, 1, 1)
+light_energy = 1.915
+spot_angle = 73.35
+
+[node name="table" parent="soba" instance=ExtResource("8_r23a2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.675334, 0, -1.57049)
+
+[node name="room_door" parent="soba" instance=ExtResource("9_wu0dq")]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0.194633, -0.0125426, 1.08791)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="soba"]
+transform = Transform3D(1, -0.000139626, 0, 0.000139626, 1, 0, 0, 0, 1, -0.00137516, 1.23003, -0.524578)
+light_color = Color(1, 0.701961, 0.427451, 1)
+light_energy = 3.078
+omni_range = 22.46
+omni_attenuation = 3.86375
+
+[node name="Walls" type="StaticBody3D" parent="soba"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="soba/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00567, 0.553223, -0.386658)
+shape = SubResource("BoxShape3D_ddrgr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="soba/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99554, 0.553223, -0.386658)
+shape = SubResource("BoxShape3D_ddrgr")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="soba/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0176669, 0.553223, -2.00021)
+shape = SubResource("BoxShape3D_j4tim")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="soba/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0176669, 0.553223, 0.986362)
+shape = SubResource("BoxShape3D_j4tim")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="soba/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0201662, -0.237789, -0.330779)
+shape = SubResource("BoxShape3D_egbte")
+
+[node name="Player" parent="." instance=ExtResource("10_oatlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.144394, 0, 0.455244)
+
+[node name="sleeping_pills" parent="." instance=ExtResource("11_n7utg")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.763388, 0.856012, -1.97443)
+
+[node name="letter" parent="." instance=ExtResource("12_5w7mm")]
+transform = Transform3D(0.602763, 0, 0.797921, 0, 1, 0, -0.797921, 0, 0.602763, 0.573745, 0.0359876, 2.16581)
+text = "Dear Zoran,
+I hope you have a wonderful day!"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="letter"]
+transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 0.037, 0)
+light_energy = 0.11
+light_size = 1.0
+light_specular = 0.0
+omni_range = 0.274
+omni_attenuation = 0.933036
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_fxp8c")
+volume_db = -11.477
+autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 3.133
+script = ExtResource("14_i10jg")
+
+[node name="Closet" parent="." instance=ExtResource("15_h3hav")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -1.67768, 0.0282915, 0.273999)
+
+[editable path="Player"]

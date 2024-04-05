@@ -1,0 +1,160 @@
+[gd_scene load_steps=2 format=3 uid="uid://7xbswek6khpp"]
+
+[ext_resource type="PackedScene" uid="uid://b33ffx2tmr73u" path="res://player/player.tscn" id="1_31e3p"]
+
+[node name="Level3Bolnica" type="Node3D"]
+
+[node name="Layout" type="CSGCombiner3D" parent="."]
+snap = 0.007895
+use_collision = true
+
+[node name="Full" type="CSGBox3D" parent="Layout"]
+flip_faces = true
+size = Vector3(20, 6, 10)
+
+[node name="BottomFloor" type="CSGBox3D" parent="Layout/Full"]
+
+[node name="FloorSplit" type="CSGBox3D" parent="Layout"]
+operation = 2
+flip_faces = true
+size = Vector3(20, 0.1, 10)
+
+[node name="StairsHole" type="CSGBox3D" parent="Layout/FloorSplit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 3)
+operation = 2
+flip_faces = true
+size = Vector3(3, 1.285, 4)
+
+[node name="WallRight" type="CSGBox3D" parent="Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00225, 0.25, 1)
+operation = 2
+flip_faces = true
+size = Vector3(14, 6.5, 0.2)
+
+[node name="Wall2" type="CSGBox3D" parent="Layout/WallRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.97876, 0, 2.00748)
+flip_faces = true
+size = Vector3(0.2, 6.5, 4.21497)
+
+[node name="Wall3" type="CSGBox3D" parent="Layout/WallRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97876, 0, 2.00748)
+flip_faces = true
+size = Vector3(0.2, 6.5, 4.21497)
+
+[node name="Wall4" type="CSGBox3D" parent="Layout/WallRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02124, 0, 2.00748)
+flip_faces = true
+size = Vector3(0.2, 6.5, 4.21497)
+
+[node name="Door" type="CSGBox3D" parent="Layout/WallRight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.00594, -2.25, 2.75)
+operation = 2
+snap = 0.076146
+flip_faces = true
+size = Vector3(1, 2, 0.315)
+
+[node name="Door2" type="CSGBox3D" parent="Layout/WallRight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.00594, 0.779846, 0.0367099)
+operation = 2
+snap = 0.076146
+flip_faces = true
+size = Vector3(0.3, 2, 1)
+
+[node name="Door3" type="CSGBox3D" parent="Layout/WallRight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.00594, 0.779846, 0.0367099)
+operation = 2
+snap = 0.076146
+flip_faces = true
+size = Vector3(0.3, 2, 1)
+
+[node name="Door4" type="CSGBox3D" parent="Layout/WallRight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.99406, 0.779846, 0.0367099)
+operation = 2
+snap = 0.076146
+flip_faces = true
+size = Vector3(0.3, 2, 1)
+
+[node name="Door5" type="CSGBox3D" parent="Layout/WallRight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.99406, -2.26605, 0.0367099)
+operation = 2
+snap = 0.076146
+flip_faces = true
+size = Vector3(0.3, 2, 1)
+
+[node name="Door6" type="CSGBox3D" parent="Layout/WallRight"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.994061, -2.27616, 0.0367099)
+operation = 2
+snap = 0.076146
+flip_faces = true
+size = Vector3(0.3, 2, 1)
+
+[node name="WallRight2" type="CSGBox3D" parent="Layout"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5, 0.25, -2)
+operation = 2
+flip_faces = true
+size = Vector3(10, 6.5, 0.2)
+
+[node name="Wall3" type="CSGBox3D" parent="Layout/WallRight2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.999997, 0, 2.08076)
+flip_faces = true
+size = Vector3(0.2, 6.5, 4.21497)
+
+[node name="Wall4" type="CSGBox3D" parent="Layout/WallRight2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02124, 0, 2.00748)
+flip_faces = true
+size = Vector3(0.2, 6.5, 4.21497)
+
+[node name="Door3" type="CSGBox3D" parent="Layout/WallRight2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.00594, 0.779846, 0.0367099)
+operation = 2
+snap = 0.076146
+flip_faces = true
+size = Vector3(0.3, 2, 1)
+
+[node name="Door4" type="CSGBox3D" parent="Layout/WallRight2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.99406, 0.779846, 0.0367098)
+operation = 2
+snap = 0.076146
+flip_faces = true
+size = Vector3(0.3, 2, 1)
+
+[node name="Door5" type="CSGBox3D" parent="Layout/WallRight2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.99406, -2.25675, 0.0367098)
+operation = 2
+snap = 0.076146
+flip_faces = true
+size = Vector3(0.3, 2, 1)
+
+[node name="Door6" type="CSGBox3D" parent="Layout/WallRight2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.00594, -2.26862, 0.0367091)
+operation = 2
+snap = 0.076146
+flip_faces = true
+size = Vector3(0.3, 2, 1)
+
+[node name="OstavaWC" type="CSGBox3D" parent="Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.49719, 0.0554826, 3.04409)
+operation = 2
+flip_faces = true
+size = Vector3(3, 6.29517, 4)
+
+[node name="OstavaWC2" type="CSGBox3D" parent="Layout/OstavaWC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0.0999999)
+operation = 2
+flip_faces = true
+size = Vector3(2.8, 6.295, 3.8)
+
+[node name="Door" type="CSGBox3D" parent="Layout/OstavaWC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92057, -1.93608)
+operation = 2
+flip_faces = true
+size = Vector3(1, 2, 0.427832)
+
+[node name="Door2" type="CSGBox3D" parent="Layout/OstavaWC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.11127, -1.93438)
+operation = 2
+flip_faces = true
+size = Vector3(1, 2, 0.43125)
+
+[node name="Player" parent="." instance=ExtResource("1_31e3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86527, 0, -0.406816)

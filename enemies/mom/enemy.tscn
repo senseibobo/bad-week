@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://che60hcngt3xf"]
+
+[ext_resource type="PackedScene" uid="uid://bglh3swar8w2a" path="res://enemy/enemy.tscn" id="1_0t6on"]
+[ext_resource type="PackedScene" uid="uid://x7wv7vj2s3tl" path="res://models/mama.glb" id="2_q2213"]
+
+[node name="Enemy2" instance=ExtResource("1_0t6on")]
+max_health = 1.0
+
+[node name="MeshInstance3D" parent="." index="1"]
+visible = false
+
+[node name="mama" parent="." index="4" instance=ExtResource("2_q2213")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.00518, 1.13731, -0.388218)

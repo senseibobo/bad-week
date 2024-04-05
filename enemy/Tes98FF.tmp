@@ -1,0 +1,72 @@
+[gd_scene load_steps=14 format=3 uid="uid://ci8o8q3e6dsk"]
+
+[ext_resource type="PackedScene" uid="uid://bglh3swar8w2a" path="res://enemy/enemy.tscn" id="1_2bis8"]
+[ext_resource type="PackedScene" uid="uid://b33ffx2tmr73u" path="res://player/player.tscn" id="2_eav7x"]
+[ext_resource type="PackedScene" uid="uid://c7wqreduhy1da" path="res://interactables/exit_door/exit_door.tscn" id="3_b078n"]
+[ext_resource type="PackedScene" uid="uid://cda2v0dih0t1q" path="res://interactables/polica/polica.tscn" id="4_eygjp"]
+[ext_resource type="PackedScene" uid="uid://dqlb5bda3pd0v" path="res://interactables/frizider/frizider.tscn" id="5_v6ac8"]
+[ext_resource type="PackedScene" uid="uid://bh5ojdo1nqt7t" path="res://non_interactables/washing_machine/washing_machine.tscn" id="6_8n43q"]
+[ext_resource type="PackedScene" uid="uid://chw107qet8jdu" path="res://interactables/bed/bed.tscn" id="7_s6s7s"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n13en"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_4sr4b"]
+sky_material = SubResource("ProceduralSkyMaterial_n13en")
+
+[sub_resource type="Environment" id="Environment_wweo1"]
+background_mode = 2
+sky = SubResource("Sky_4sr4b")
+tonemap_mode = 2
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_cynjl"]
+vertices = PackedVector3Array(-9.5, 1, -9.5, -9.5, 1, 9.5, 9.5, 1, 9.5, 9.5, 1, -9.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_74l7n"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_il57v"]
+
+[node name="Test" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wweo1")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0441076, 0.999027, 0, -0.999027, 0.0441076, 0, 3.87818, 0)
+
+[node name="Enemy" parent="." instance=ExtResource("1_2bis8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19162, 1.16311, -13.6815)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_eav7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.599503, 10.5933)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_cynjl")
+
+[node name="Ground" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ground"]
+shape = SubResource("BoxShape3D_74l7n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Ground"]
+mesh = SubResource("BoxMesh_il57v")
+
+[node name="Polica" parent="." instance=ExtResource("4_eygjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49867, 0.499999, 3.24238)
+
+[node name="exit_door" parent="." instance=ExtResource("3_b078n")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.25022, 0.5, 1.48274)
+
+[node name="frizider2" parent="." instance=ExtResource("5_v6ac8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.607194, 0.528989, 5.90036)
+
+[node name="washing_machine" parent="." instance=ExtResource("6_8n43q")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.676491, 0.5, 7.15512)
+
+[node name="bed" parent="." instance=ExtResource("7_s6s7s")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 2.7085, 0.5, 6.89735)

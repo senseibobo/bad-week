@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://brbrncopd8dwc"]
+
+[ext_resource type="Script" path="res://interactables/letter/letter.gd" id="1_y2iva"]
+[ext_resource type="Script" path="res://interactables/interactable.gd" id="2_ugtn4"]
+[ext_resource type="Texture2D" uid="uid://b1y3d8f00rwd8" path="res://textures/envelope.png" id="3_u0eok"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qgd4s"]
+size = Vector3(0.231, 0.075, 0.368)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fn4kp"]
+albedo_texture = ExtResource("3_u0eok")
+uv1_scale = Vector3(4.02, 1.79, 2.395)
+uv1_offset = Vector3(0.495, -0.535, -0.49)
+uv1_triplanar = true
+distance_fade_min_distance = 2.0
+distance_fade_max_distance = 3.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_hgrsh"]
+material = SubResource("StandardMaterial3D_fn4kp")
+size = Vector3(0.195, 0.01, 0.338)
+
+[node name="letter" type="Node3D"]
+script = ExtResource("1_y2iva")
+text = "maybe i should read that letter by the door"
+
+[node name="Interactable" type="Area3D" parent="."]
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("2_ugtn4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+shape = SubResource("BoxShape3D_qgd4s")
+
+[node name="Letter" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_hgrsh")

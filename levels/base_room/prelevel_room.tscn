@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://drisq4xjnwlhu"]
+
+[ext_resource type="PackedScene" uid="uid://bgpxk7qmynt85" path="res://levels/base_room/room.tscn" id="1_suexv"]
+[ext_resource type="PackedScene" uid="uid://brbrncopd8dwc" path="res://interactables/letter/letter.tscn" id="2_lpak1"]
+[ext_resource type="PackedScene" uid="uid://bpp7sb1tnn231" path="res://interactables/sleeping_pills/sleeping_pills.tscn" id="3_yhu0o"]
+[ext_resource type="PackedScene" uid="uid://b33ffx2tmr73u" path="res://player/player.tscn" id="4_70gjm"]
+
+[node name="Room" instance=ExtResource("1_suexv")]
+
+[node name="letter" parent="." index="4" instance=ExtResource("2_lpak1")]
+transform = Transform3D(0.602763, 0, 0.797921, 0, 1, 0, -0.797921, 0, 0.602763, 0.573745, 0.0359876, 2.16581)
+text = "Dear Zoran,
+I hope you have a wonderful day!"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="letter" index="2"]
+transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 0.037, 0)
+light_energy = 0.11
+light_size = 1.0
+light_specular = 0.0
+omni_range = 0.274
+omni_attenuation = 0.933036
+
+[node name="sleeping_pills" parent="." index="5" instance=ExtResource("3_yhu0o")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.763388, 0.856012, -1.97443)
+
+[node name="Player" parent="." index="6" instance=ExtResource("4_70gjm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.661782, 0.0359876, -0.71948)

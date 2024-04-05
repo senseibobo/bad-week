@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyx08if5nltpm"]
+
+[ext_resource type="Texture2D" uid="uid://6k6etli8r7vd" path="res://textures/Chain-Link-Fence-Features.png" id="1_jv1d2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ws123"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_jv1d2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dxltn"]
+material = SubResource("StandardMaterial3D_ws123")
+size = Vector2(3, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jvy6k"]
+size = Vector3(2.75195, 1.74878, 0.0900879)
+
+[node name="ChainFence" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["navmesh"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.936426, 0)
+mesh = SubResource("QuadMesh_dxltn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.889771, 0)
+shape = SubResource("BoxShape3D_jvy6k")

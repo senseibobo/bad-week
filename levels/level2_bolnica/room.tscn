@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdahbg3jtigdp"]
+
+[ext_resource type="PackedScene" uid="uid://drisq4xjnwlhu" path="res://levels/base_room/prelevel_room.tscn" id="1_yurak"]
+
+[node name="Room" instance=ExtResource("1_yurak")]
+
+[node name="bed" parent="soba" index="1"]
+dream_scene = "res://levels/level2_bolnica/level2_bolnica.tscn"
+
+[node name="Reso" parent="soba" index="4"]
+transform = Transform3D(0.0299497, 0, 0.398877, 0, 0.4, 0, -0.398877, 0, 0.0299497, -0.776379, 0.447772, 0.604198)
+
+[node name="letter" parent="." index="4"]
+text = "Dear Zoran,
+You have an outstanding medical bill of $521700.97. You will hear from us if you don't pay up."
+
+[editable path="soba/Closet"]

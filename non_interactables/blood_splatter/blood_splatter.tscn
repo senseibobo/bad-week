@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgu0k1t0nvl20"]
+
+[ext_resource type="Texture2D" uid="uid://dnsg7pdc558ki" path="res://textures/blood.png" id="1_3l4qx"]
+
+[node name="BloodSplatter" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0374004, 0)
+shaded = true
+texture = ExtResource("1_3l4qx")

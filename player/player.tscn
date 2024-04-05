@@ -1,0 +1,151 @@
+[gd_scene load_steps=9 format=3 uid="uid://b33ffx2tmr73u"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_q11nt"]
+[ext_resource type="PackedScene" uid="uid://bjodx7nngvsg7" path="res://non_interactables/shovel/shovel.tscn" id="2_2bp2a"]
+[ext_resource type="Shader" path="res://player/player.gdshader" id="2_rnbs1"]
+[ext_resource type="PackedScene" uid="uid://b4iesfs6ti5im" path="res://player/blood_particle.tscn" id="3_2jwvc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_66e3y"]
+radius = 0.2
+height = 1.7
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rhu50"]
+radius = 0.2
+height = 1.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vwjx"]
+size = Vector3(1.38184, 0.644775, 2.57813)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ifvps"]
+shader = ExtResource("2_rnbs1")
+shader_parameter/strength = 1.0
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_q11nt")
+max_health = 200.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+layers = 2
+mesh = SubResource("CapsuleMesh_66e3y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("CapsuleShape3D_rhu50")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+cull_mask = 1048569
+current = true
+
+[node name="InteractRaycast" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -3)
+collision_mask = 5
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_custom_color = Color(1, 0.0470588, 0.317647, 0.427451)
+debug_shape_thickness = 1
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29514e-09, 0.0262533, 0)
+visible = false
+light_energy = 2.922
+spot_range = 55.279
+spot_attenuation = 2.21914
+spot_angle = 83.89
+
+[node name="AttackHitbox" type="Area3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.68629, 0)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/AttackHitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70152, -1.51927)
+shape = SubResource("BoxShape3D_5vwjx")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="InteractLabel" type="Label" parent="HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -27.0
+offset_right = 1.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Blood" type="ColorRect" parent="HUD"]
+material = SubResource("ShaderMaterial_ifvps")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NoteLabel" type="Label" parent="HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -27.0
+offset_right = 1.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="HUD/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(320, 240)
+render_target_update_mode = 4
+
+[node name="Shovel" parent="HUD/SubViewportContainer/SubViewport" instance=ExtResource("2_2bp2a")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.802084, -0.783196)
+
+[node name="ShovelCam" type="Camera3D" parent="HUD/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40208, 0)
+cull_mask = 4
+
+[node name="BloodParticle" parent="." instance=ExtResource("3_2jwvc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0796954, 1.71023, -2.15973)

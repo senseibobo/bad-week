@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpm210v8k11qi"]
+
+[ext_resource type="PackedScene" uid="uid://tjbfm6sokd4m" path="res://levels/level0/room2.tscn" id="1_8clow"]
+
+[node name="room" instance=ExtResource("1_8clow")]
+
+[node name="bed" parent="soba" index="1"]
+dream_scene = "res://levels/level2_bolnica/level2_bolnica2.tscn"
+
+[node name="Camera3D" parent="Player" index="2"]
+current = false
+
+[node name="letter" parent="." index="4"]
+text = "Dear Zoran,
+You have an outstanding medical bill of $521700.97. You will hear from us if you don't pay up."
+
+[editable path="Player"]

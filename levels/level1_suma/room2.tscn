@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://csi3ym3gxq1sk"]
+
+[ext_resource type="PackedScene" uid="uid://tjbfm6sokd4m" path="res://levels/level0/room2.tscn" id="1_b3b1h"]
+
+[node name="room2" instance=ExtResource("1_b3b1h")]
+
+[node name="bed" parent="soba" index="1"]
+dream_scene = "res://levels/level1_suma/level1_suma.tscn"
+
+[node name="Camera3D" parent="Player" index="2"]
+current = false
+
+[node name="letter" parent="." index="4"]
+text = "Dear Zoran,
+I'm sorry to say Žuća got hit by a car, he didn't make it."
+
+[editable path="Player"]

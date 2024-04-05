@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxru7u5q7mkue"]
+
+[ext_resource type="PackedScene" uid="uid://bgpxk7qmynt85" path="res://levels/base_room/room.tscn" id="1_wrqja"]
+[ext_resource type="Script" path="res://non_interactables/room/Player_death_room.gd" id="9_5ffjt"]
+[ext_resource type="Shader" path="res://player/player.gdshader" id="10_febew"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mne03"]
+shader = ExtResource("10_febew")
+shader_parameter/strength = 1.0
+
+[node name="Room" instance=ExtResource("1_wrqja")]
+
+[node name="OmniLight3D" parent="soba" index="8"]
+visible = false
+
+[node name="player" type="Node3D" parent="." index="4"]
+transform = Transform3D(-0.0430439, 0, -0.999073, 0, 1, 0, 0.999073, 0, -0.0430439, -1.66082, 1.04884, -1.87494)
+script = ExtResource("9_5ffjt")
+
+[node name="Camera3D" type="Camera3D" parent="player" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="HUD" type="CanvasLayer" parent="player" index="1"]
+
+[node name="InteractLabel" type="Label" parent="player/HUD" index="0"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -27.0
+offset_right = 1.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="player/HUD" index="1"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Blood" type="ColorRect" parent="player/HUD" index="2"]
+visible = false
+material = SubResource("ShaderMaterial_mne03")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NoteLabel" type="Label" parent="player/HUD" index="3"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -27.0
+offset_right = 1.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "press e to go back to sleep"
+horizontal_alignment = 1
+vertical_alignment = 1
