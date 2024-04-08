@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-State="*res://global/state.gd"
 Global="*res://global/global.gd"
 Transition="*res://global/transition/transition.tscn"
 
@@ -84,6 +83,11 @@ sprint={
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Interactable"
 3d_physics/layer_4="Enemy"
+
+[navigation]
+
+3d/default_cell_size=0.05
+3d/default_cell_height=0.05
 
 [rendering]
 

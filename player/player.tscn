@@ -24,6 +24,7 @@ shader_parameter/strength = 1.0
 collision_layer = 2
 script = ExtResource("1_q11nt")
 max_health = 200.0
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)

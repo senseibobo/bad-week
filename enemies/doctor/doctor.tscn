@@ -84,6 +84,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.540179, 0)
 [node name="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.754537, 0)
 
+[node name="RayCast3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19411, 0)
+target_position = Vector3(1, 0, 0)
+
 [node name="doktor" parent="." index="4" instance=ExtResource("2_4svap")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.00917053, -0.085889, -0.0550823)
 
@@ -93,8 +97,8 @@ mesh = SubResource("ArrayMesh_uqlif")
 [node name="Cube_001" parent="doktor" index="1"]
 mesh = SubResource("ArrayMesh_3ycnx")
 
-[node name="RayCast3D" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19411, 0)
-target_position = Vector3(1, 0, 0)
+[node name="Cube_003" parent="doktor" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.10902, 5.39443, -0.226636)
+rotation_edit_mode = 2
 
 [editable path="doktor"]

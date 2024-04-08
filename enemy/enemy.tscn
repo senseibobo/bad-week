@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bglh3swar8w2a"]
+[gd_scene load_steps=4 format=3 uid="uid://bglh3swar8w2a"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_2ea2e"]
-[ext_resource type="Script" path="res://enemy/state_machine_fsm.gd" id="2_tyixo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_83dd4"]
 radius = 0.246079
@@ -13,8 +12,8 @@ height = 1.36077
 collision_layer = 8
 collision_mask = 11
 script = ExtResource("1_2ea2e")
-attack_range = 1.0
-follow_range = 50.0
+attack_range = 0.8
+attack_cooldown = 0.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.679902, 0)
@@ -26,9 +25,8 @@ visible = false
 mesh = SubResource("CylinderMesh_el6j2")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-
-[node name="State Machine" type="Node" parent="."]
-script = ExtResource("2_tyixo")
+path_desired_distance = 0.3
+debug_enabled = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 collision_mask = 3
