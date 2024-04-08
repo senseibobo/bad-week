@@ -20,8 +20,8 @@ func _ready():
 
 
 func flicker():
-	await get_tree().create_timer(randf()*2.0)
 	anim_player.play("flicker")
+	anim_player.seek(randf()*4.9)
 	on = true
 	flickering = true
 	set("collision_layer", 4)

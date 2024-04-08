@@ -176,6 +176,7 @@ mesh = SubResource("BoxMesh_vje74")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0776608, 0)
+light_volumetric_fog_energy = 0.76
 light_cull_mask = 4294967263
 shadow_enabled = true
 

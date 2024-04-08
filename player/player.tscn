@@ -22,6 +22,8 @@ shader_parameter/strength = 1.0
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
+floor_max_angle = 0.872665
+floor_snap_length = 0.2
 script = ExtResource("1_q11nt")
 max_health = 200.0
 metadata/_edit_group_ = true
@@ -143,6 +145,7 @@ visible = false
 
 [node name="ShovelCam" type="Camera3D" parent="HUD/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40208, 0)
+visible = false
 cull_mask = 4
 
 [node name="BloodParticle" parent="." instance=ExtResource("3_2jwvc")]

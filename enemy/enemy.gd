@@ -128,7 +128,7 @@ func _try_attack(delta):
 	if not _is_in_attack_range():
 		_start_chasing()
 	if attack_timer <= 0.0:
-		attack(damage)
+		attack()
 		attack_timer = attack_cooldown
 
 
@@ -143,7 +143,7 @@ func hit():
 		death()
 
 
-func attack(damage):
+func attack():
 	rotation.y = PI/2 + \
 	-Vector2(global_position.x, global_position.z).angle_to_point(
 	 Vector2(Global.player.global_position.x, Global.player.global_position.z)
