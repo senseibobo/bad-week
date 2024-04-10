@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccdn8n6u1t75x"]
+
+[ext_resource type="PackedScene" uid="uid://dxru7u5q7mkue" path="res://levels/level0/death_room.tscn" id="1_gjelq"]
+
+[node name="Room" instance=ExtResource("1_gjelq")]
+
+[node name="player" parent="." index="4"]
+alt = true
+alt_scene = "res://levels/level3_hodnik/level3_hodnik2.tscn"

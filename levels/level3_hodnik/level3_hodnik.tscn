@@ -112,6 +112,7 @@ size = Vector3(0.185486, 2.9248, 26.498)
 vertices = PackedVector3Array(-2.0464, 0.973, -3.26933, -2.0464, 0.973, -2.26933, -0.7964, 0.973, -2.26933, -0.7964, 0.973, -3.26933, -14.0464, 0.473, 55.7307, -17.5464, 0.473, 70.4807, -17.5464, 0.473, 71.2307, -7.7964, 0.473, 83.2307, 7.9536, 0.473, 83.2307, 17.4536, 0.473, 71.2307, 17.4536, 0.473, 71.2307, 14.2036, 0.473, 55.7307, 0.2036, 0.473, 48.9807, -14.0464, 0.473, 55.7307, -17.5464, 0.473, 71.2307, -7.7964, 0.473, 83.2307)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(6, 5, 4), PackedInt32Array(9, 8, 7), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(13, 10, 14), PackedInt32Array(14, 10, 15)]
 geometry_parsed_geometry_type = 2
+geometry_collision_mask = 4294967295
 geometry_source_geometry_mode = 1
 geometry_source_group_name = &"navmesh"
 

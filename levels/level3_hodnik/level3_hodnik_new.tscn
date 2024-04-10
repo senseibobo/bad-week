@@ -1,10 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://drlmar75yjna1"]
+[gd_scene load_steps=22 format=3 uid="uid://drlmar75yjna1"]
 
 [ext_resource type="PackedScene" uid="uid://5fmmncsm7408" path="res://levels/level3_hodnik/layout.tscn" id="1_lovk8"]
 [ext_resource type="PackedScene" uid="uid://b33ffx2tmr73u" path="res://player/player.tscn" id="2_1rb7b"]
 [ext_resource type="Script" path="res://levels/level3_hodnik/tpArea.gd" id="3_1s2xs"]
 [ext_resource type="PackedScene" uid="uid://d3aohfcfqfigm" path="res://interactables/exit_door/fake_exit_door.tscn" id="4_86hve"]
+[ext_resource type="Script" path="res://levels/level3_hodnik/FallArea.gd" id="4_damol"]
 [ext_resource type="PackedScene" uid="uid://csce5is60lrmw" path="res://models/vrata.glb" id="5_2p3c6"]
+[ext_resource type="PackedScene" uid="uid://bgpxk7qmynt85" path="res://levels/base_room/room.tscn" id="6_b1s5h"]
+[ext_resource type="Texture2D" uid="uid://b27i7iwylhlwe" path="res://models/soba_soba.png" id="7_j4a6m"]
+[ext_resource type="Texture2D" uid="uid://cp4jtem4we2kw" path="res://models/soba_prozor.png" id="8_o1ty6"]
+[ext_resource type="Texture2D" uid="uid://4dr755k2yujp" path="res://models/soba_lightCol.png" id="9_5y802"]
+[ext_resource type="Script" path="res://levels/level3_hodnik/Door.gd" id="10_m55jk"]
 
 [sub_resource type="Environment" id="Environment_t1isk"]
 ambient_light_source = 2
@@ -32,6 +38,120 @@ volumetric_fog_density = 0.266
 [sub_resource type="BoxShape3D" id="BoxShape3D_t8s67"]
 size = Vector3(2.5, 6, 2.5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_wd6y7"]
+size = Vector3(258.763, 1, 333.199)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqhkx"]
+resource_name = "soba"
+albedo_texture = ExtResource("7_j4a6m")
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2xy5"]
+resource_name = "prozor"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("8_o1ty6")
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2aao"]
+resource_name = "light"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("9_5y802")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_aww7w"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0, 0, 0),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0, 2, 0, 7, 0, 6, 0, 2, 0, 3, 0, 7, 0, 6, 0, 5, 0, 4, 0, 6, 0, 7, 0, 5, 0, 4, 0, 1, 0, 0, 0, 4, 0, 5, 0, 1, 0, 2, 0, 4, 0, 0, 0, 2, 0, 6, 0, 4, 0, 7, 0, 1, 0, 5, 0, 7, 0, 3, 0, 1, 0),
+"name": "soba",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 255, 255, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 255, 255, 255, 255, 254, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0)
+}, {
+"aabb": AABB(0, 0, 0, 0, 0, 0),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0),
+"name": "prozor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0)
+}, {
+"aabb": AABB(0, 0, 0, 0, 0, 0),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0, 2, 0, 5, 0, 3, 0, 2, 0, 4, 0, 5, 0, 6, 0, 9, 0, 7, 0, 6, 0, 8, 0, 9, 0, 8, 0, 11, 0, 9, 0, 8, 0, 10, 0, 11, 0),
+"name": "light",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 127, 0, 0, 255, 255, 0, 0, 255, 127, 0, 0, 0, 0, 82, 47, 255, 127, 0, 0, 255, 255, 82, 47, 255, 127, 0, 0, 0, 0, 255, 255, 255, 127, 0, 0, 255, 255, 255, 255, 255, 127, 0, 0, 255, 127, 0, 0, 255, 255, 0, 0, 255, 127, 0, 0, 0, 0, 0, 0, 255, 127, 82, 47, 255, 255, 0, 0, 255, 127, 82, 47, 0, 0, 0, 0, 255, 127, 255, 255, 255, 255, 0, 0, 255, 127, 255, 255, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h12u1"]
+resource_name = "soba_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, 0, -2, 2, 1.62028, 3.00001),
+"attribute_data": PackedByteArray(131, 221, 195, 130, 24, 165, 212, 183, 131, 221, 195, 130, 245, 215, 9, 224, 178, 157, 159, 199, 245, 215, 9, 224, 71, 185, 97, 128, 253, 139, 48, 183, 218, 183, 249, 128, 11, 186, 81, 210, 143, 128, 59, 214, 66, 185, 208, 212, 255, 255, 146, 129, 254, 164, 187, 145, 255, 255, 146, 129, 201, 254, 113, 239, 226, 158, 53, 237, 201, 254, 113, 239, 172, 227, 151, 126, 201, 139, 144, 145, 172, 227, 151, 126, 218, 210, 15, 223, 133, 132, 255, 255, 218, 210, 15, 223),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray(2, 0, 11, 0, 8, 0, 2, 0, 5, 0, 11, 0, 6, 0, 21, 0, 18, 0, 6, 0, 9, 0, 21, 0, 20, 0, 17, 0, 14, 0, 20, 0, 23, 0, 17, 0, 12, 0, 3, 0, 0, 0, 12, 0, 15, 0, 3, 0, 7, 0, 13, 0, 1, 0, 7, 0, 19, 0, 13, 0, 22, 0, 4, 0, 16, 0, 22, 0, 10, 0, 4, 0),
+"material": SubResource("StandardMaterial3D_mqhkx"),
+"name": "soba",
+"primitive": 3,
+"uv_scale": Vector4(2.00285, 1.99513, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 255, 0, 0, 0, 0, 254, 255, 17, 213, 0, 0, 0, 0, 254, 255, 156, 254, 0, 0, 255, 255, 254, 255, 255, 255, 0, 0, 255, 255, 254, 255, 238, 206, 0, 0, 255, 255, 254, 255, 32, 254, 0, 0, 0, 0, 0, 0, 94, 125, 0, 0, 0, 0, 0, 0, 48, 213, 0, 0, 0, 0, 0, 0, 170, 255, 0, 0, 255, 255, 0, 0, 228, 122, 0, 0, 255, 255, 0, 0, 41, 208, 0, 0, 255, 255, 0, 0, 45, 255, 255, 255, 0, 0, 254, 255, 255, 255, 255, 255, 0, 0, 254, 255, 35, 213, 255, 255, 0, 0, 254, 255, 255, 63, 255, 255, 255, 255, 254, 255, 255, 255, 255, 255, 255, 255, 254, 255, 55, 206, 255, 255, 255, 255, 254, 255, 251, 63, 255, 255, 0, 0, 0, 0, 98, 127, 255, 255, 0, 0, 0, 0, 66, 213, 255, 255, 0, 0, 0, 0, 243, 63, 255, 255, 255, 255, 0, 0, 33, 126, 255, 255, 255, 255, 0, 0, 108, 207, 255, 255, 255, 255, 0, 0, 233, 63, 86, 255, 168, 128, 251, 170, 129, 170, 60, 191, 122, 126, 74, 253, 75, 125, 88, 38, 177, 204, 249, 190, 244, 125, 255, 127, 255, 127, 214, 170, 147, 170, 208, 191, 161, 127, 255, 127, 255, 127, 67, 39, 133, 206, 139, 191, 24, 127, 74, 252, 75, 124, 229, 170, 140, 170, 18, 127, 37, 254, 35, 249, 35, 121, 201, 37, 146, 203, 154, 125, 53, 251, 255, 255, 255, 255, 191, 170, 159, 170, 246, 123, 237, 247, 255, 127, 255, 127, 183, 38, 111, 205, 161, 122, 67, 245)
+}, {
+"aabb": AABB(-0.555513, 0.360096, -1.88802, 1.11103, 0.900084, 1.00136e-05),
+"attribute_data": PackedByteArray(95, 128, 88, 255, 90, 129, 241, 128, 255, 255, 255, 255, 247, 255, 249, 128),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 1, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_n2xy5"),
+"name": "prozor",
+"primitive": 3,
+"uv_scale": Vector4(2.01775, 2.0144, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 19, 128, 0, 0, 255, 255, 0, 0, 255, 127, 255, 255, 0, 0, 0, 0, 42, 128, 255, 255, 255, 255, 0, 0, 24, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255)
+}, {
+"aabb": AABB(-0.0782824, 1.17549, -0.59638, 0.156565, 0.846973, 0.156565),
+"attribute_data": PackedByteArray(255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 23, 132, 1, 128, 143, 137, 157, 255, 143, 137, 255, 255, 23, 132, 1, 128, 1, 128, 157, 255, 1, 128, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 23, 132, 1, 128, 143, 137, 157, 255, 143, 137, 255, 255, 23, 132, 1, 128, 1, 128, 157, 255, 1, 128),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 5, 0, 1, 0, 0, 0, 2, 0, 5, 0, 3, 0, 7, 0, 4, 0, 3, 0, 6, 0, 7, 0, 8, 0, 13, 0, 9, 0, 8, 0, 10, 0, 13, 0, 11, 0, 15, 0, 12, 0, 11, 0, 14, 0, 15, 0),
+"material": SubResource("StandardMaterial3D_h2aao"),
+"name": "light",
+"primitive": 3,
+"uv_scale": Vector4(2, 2, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 0, 0, 255, 127, 255, 127, 0, 0, 82, 47, 255, 127, 255, 127, 0, 0, 82, 47, 255, 127, 255, 127, 255, 255, 82, 47, 255, 127, 255, 127, 255, 255, 82, 47, 255, 127, 255, 127, 0, 0, 255, 255, 255, 127, 255, 127, 255, 255, 255, 255, 255, 127, 255, 127, 255, 127, 0, 0, 255, 255, 255, 191, 255, 127, 0, 0, 0, 0, 255, 191, 255, 127, 82, 47, 255, 255, 255, 191, 255, 127, 82, 47, 255, 255, 255, 191, 255, 127, 82, 47, 0, 0, 255, 191, 255, 127, 82, 47, 0, 0, 255, 191, 255, 127, 255, 255, 255, 255, 255, 191, 255, 127, 255, 255, 0, 0, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_aww7w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hma7a"]
+resource_name = "light"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("9_5y802")
+roughness = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yh3hv"]
+size = Vector3(1.06165, 2.86713, 0.426758)
+
 [node name="Level3HodnikNew" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -40,55 +160,58 @@ environment = SubResource("Environment_t1isk")
 [node name="Layout" parent="." instance=ExtResource("1_lovk8")]
 
 [node name="Player" parent="." instance=ExtResource("2_1rb7b")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.720718, 2.32937, -18.6124)
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0.708251, 1.68191, -51.464)
+fall_death = false
 
 [node name="Areas" type="Node3D" parent="."]
 
-[node name="TP1" type="Area3D" parent="Areas"]
+[node name="TPAreas" type="Node3D" parent="Areas"]
+
+[node name="TP1" type="Area3D" parent="Areas/TPAreas"]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("3_1s2xs")
 teleport_x = 19.5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TP1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TPAreas/TP1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -0.75)
 shape = SubResource("BoxShape3D_t8s67")
 
-[node name="TP2" type="Area3D" parent="Areas"]
+[node name="TP2" type="Area3D" parent="Areas/TPAreas"]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("3_1s2xs")
 teleport_x = 19.5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TP2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TPAreas/TP2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1539, 2.74268, -15.838)
 shape = SubResource("BoxShape3D_t8s67")
 
-[node name="TP3" type="Area3D" parent="Areas"]
+[node name="TP3" type="Area3D" parent="Areas/TPAreas"]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("3_1s2xs")
 teleport_x = -19.5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TP3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TPAreas/TP3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.6993, 2.74268, -12.8198)
 shape = SubResource("BoxShape3D_t8s67")
 
-[node name="TP4" type="Area3D" parent="Areas"]
+[node name="TP4" type="Area3D" parent="Areas/TPAreas"]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("3_1s2xs")
 teleport_z = -6.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TP4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TPAreas/TP4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 2.5, -45.1508)
 shape = SubResource("BoxShape3D_t8s67")
 
-[node name="TP5" type="Area3D" parent="Areas"]
+[node name="TP5" type="Area3D" parent="Areas/TPAreas"]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
@@ -96,9 +219,18 @@ script = ExtResource("3_1s2xs")
 teleport_x = -54.0
 teleport_z = -60.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TP5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TPAreas/TP5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.75, 2.5, 7.81704)
 shape = SubResource("BoxShape3D_t8s67")
+
+[node name="FallArea" type="Area3D" parent="Areas"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_damol")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/FallArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22, 0)
+shape = SubResource("BoxShape3D_wd6y7")
 
 [node name="Objects" type="Node3D" parent="."]
 
@@ -108,4 +240,30 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.75, 1.46717, -71.9767
 [node name="vrata" parent="." instance=ExtResource("5_2p3c6")]
 transform = Transform3D(-0.0323358, 0, -0.498953, 0, 0.5, 0, 0.498953, 0, -0.0323358, 0.694842, 1.49661, -23.9456)
 
+[node name="Room" parent="." instance=ExtResource("6_b1s5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.488656, 1.30441, -26.7844)
+
+[node name="Cube" parent="Room/soba" index="0"]
+mesh = SubResource("ArrayMesh_h12u1")
+surface_material_override/2 = SubResource("StandardMaterial3D_hma7a")
+
+[node name="SpotLight3D" parent="Room/soba/Computer/MeshInstance3D" index="0"]
+transform = Transform3D(1.95242, 0, 0, 0, -2.18182, -0.181596, 0, 0.276481, -3.32185, 0, 0, -1.02901)
+
+[node name="OmniLight3D" parent="Room/soba" index="8"]
+visible = false
+
+[node name="Door" type="Area3D" parent="Room"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("10_m55jk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07971, 0.933563, 2.71328)
+shape = SubResource("BoxShape3D_yh3hv")
+
+[node name="Marker3D" type="Marker3D" parent="Room/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23205, 0.519848, 3.21795)
+
 [editable path="Objects/exit_door"]
+[editable path="Room"]

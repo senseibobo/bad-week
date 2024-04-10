@@ -1,6 +1,9 @@
 extends Node3D
 
 @export var sensitivity: float = 0.6
+@export var alt: bool = false
+@export_file var alt_scene: String = ""
+
 @onready var camera = $Camera3D
 
 
@@ -19,4 +22,7 @@ func _process(delta):
 
 func _process_interacting():
 	if Input.is_action_just_pressed("interact"):
-		Transition.transition_to(Global.old_scene)
+		if alt:
+			Transition.transition_to(alt_scene)
+		else:
+			Transition.transition_to(Global.old_scene)

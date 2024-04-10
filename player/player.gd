@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var sprint_multiplier: float = 1.5
 @export var sensitivity: float = 0.6
 @export var max_health: float = 100
+@export var fall_death: bool = true
 @export var has_shovel: bool = false:
 	set(value):
 		has_shovel = value
@@ -92,7 +93,7 @@ func _process_movement(delta):
 
 	move_and_slide()
 	
-	if position.y < -20.0:
+	if fall_death and position.y < -20.0:
 		death()
 
 
