@@ -31,4 +31,8 @@ debug_enabled = true
 [node name="RayCast3D" type="RayCast3D" parent="."]
 collision_mask = 3
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="NoticeSound" type="AudioStreamPlayer3D" parent="."]
+
+[node name="HitSound" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AttackSound" type="AudioStreamPlayer3D" parent="."]

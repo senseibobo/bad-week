@@ -26,12 +26,13 @@ var lamps: int = 0
 @onready var interact_raycast: RayCast3D = $Camera3D/InteractRaycast
 @onready var hud: CanvasLayer = $HUD
 @onready var interact_label: Label = $HUD/InteractLabel
-@onready var attack_hitbox: Area3D = $Camera3D/AttackHitbox
+@onready var attack_shape_cast: ShapeCast3D = $Camera3D/ShapeCast3D
 @onready var blood_hp_indicator: ColorRect = $HUD/Blood
 @onready var health: float = max_health
 @onready var blood_particle = $BloodParticle
 @onready var shovel: Node3D = $HUD/SubViewportContainer/SubViewport/Shovel
 @onready var note_label: Label = $HUD/NoteLabel
+@onready var hit_sound_player: AudioStreamPlayer = $HitSound
 
 
 func _ready():
@@ -95,17 +96,13 @@ func _process_movement(delta):
 		death()
 
 
-func deal_damage():
-	for body in attack_hitbox.get_overlapping_bodies():
-		body.hit()
-		blood_particle.emitting = true
-
 func interact():
 	var interactable: Interactable = interact_raycast.get_collider()
 	interactable.on_interact(self)
 
 
 func hit(damage: float):
+	hit_sound_player.play()
 	health -= damage
 	_update_blood_hp_indicator()
 	if health <= 0:

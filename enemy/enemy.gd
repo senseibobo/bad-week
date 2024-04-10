@@ -22,7 +22,9 @@ enum State {
 @onready var health: float = max_health
 @onready var parent = get_parent()
 @onready var vision_raycast: RayCast3D = $RayCast3D
-@onready var audioplayer = $AudioStreamPlayer3D 
+@onready var notice_sound_player: AudioStreamPlayer3D = $NoticeSound 
+@onready var hit_sound_player: AudioStreamPlayer3D = $HitSound
+@onready var attack_sound_player: AudioStreamPlayer3D = $AttackSound 
 
 var follow_timer: float = 0.0
 var attack_timer: float = 0.0
@@ -34,9 +36,9 @@ var state: int = State.IDLE
 @export var follow_range: float = 10.0
 @export var damage: float = 20.0
 @export var max_health: float = 5.0
-@export var sound: AudioStream
 @export var death_sound: AudioStream
 @export var blind: bool = false
+@export var xray: bool = false
 @export var follow_time: float = 2.9
 
 
@@ -44,20 +46,16 @@ var state: int = State.IDLE
 func _ready():
 	set_physics_process(false)
 	await get_tree().physics_frame
+	await get_tree().physics_frame
 	set_physics_process(true)
-	audioplayer.set_stream(sound)
 
 func _physics_process(delta):
 	if not is_instance_valid(Global.player):
 		return
-	if state != State.IDLE:
-		print(attack_timer)
 	attack_timer -= delta
 	_process_state(delta)
 
 func _process_state(delta):
-	if state != State.IDLE:
-		print(state)
 	match state:
 		State.IDLE:
 			_look_for_player()
@@ -103,11 +101,13 @@ func _sees_player():
 	vision_raycast.rotation.y = -rotation.y
 	vision_raycast.target_position = (Global.player.global_position + Vector3.UP*0.5 - vision_raycast.global_position) * 1000000.0
 	vision_raycast.force_raycast_update()
-	return vision_raycast.is_colliding() and vision_raycast.get_collider() is Player
+	return \
+		xray or \
+		(vision_raycast.is_colliding() and vision_raycast.get_collider() is Player)
 
 
 func _notice_player():
-	audioplayer.play()
+	notice_sound_player.play()
 	noticed_player.emit()
 	_start_chasing()
 
@@ -138,12 +138,13 @@ func hit():
 	instance.position = global_position-Vector3(0.0,0.0,0.0)#Vector3(self.global_position.x,0.51,self.global_position.z)
 	instance.rotation_degrees.y = randf()*360.0
 	get_tree().current_scene.add_child(instance)
-	
+	hit_sound_player.play()
 	if health <= 0:
 		death()
 
 
 func attack():
+	attack_sound_player.play()
 	rotation.y = PI/2 + \
 	-Vector2(global_position.x, global_position.z).angle_to_point(
 	 Vector2(Global.player.global_position.x, Global.player.global_position.z)
@@ -156,7 +157,3 @@ func death():
 	Global.play_sound(death_sound)
 	died.emit()
 	queue_free()
-
-
-func play_sound():
-	audioplayer.play()

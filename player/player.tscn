@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b33ffx2tmr73u"]
+[gd_scene load_steps=10 format=3 uid="uid://b33ffx2tmr73u"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_q11nt"]
 [ext_resource type="PackedScene" uid="uid://bjodx7nngvsg7" path="res://non_interactables/shovel/shovel.tscn" id="2_2bp2a"]
 [ext_resource type="Shader" path="res://player/player.gdshader" id="2_rnbs1"]
 [ext_resource type="PackedScene" uid="uid://b4iesfs6ti5im" path="res://player/blood_particle.tscn" id="3_2jwvc"]
+[ext_resource type="AudioStream" uid="uid://wkqhqthhjfos" path="res://sounds/hit_player.ogg" id="5_36xg5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_66e3y"]
 radius = 0.2
@@ -13,8 +14,8 @@ height = 1.7
 radius = 0.2
 height = 1.7
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5vwjx"]
-size = Vector3(1.38184, 0.644775, 2.57813)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4c471"]
+points = PackedVector3Array(0.5, 0, 0, 0, 0.3, 0, -0.5, 0, 0, 0, -0.3, 0, 0, 0, -2.01)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ifvps"]
 shader = ExtResource("2_rnbs1")
@@ -58,14 +59,10 @@ spot_range = 55.279
 spot_attenuation = 2.21914
 spot_angle = 83.89
 
-[node name="AttackHitbox" type="Area3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.68629, 0)
-collision_layer = 0
-collision_mask = 8
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/AttackHitbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70152, -1.51927)
-shape = SubResource("BoxShape3D_5vwjx")
+[node name="ShapeCast3D" type="ShapeCast3D" parent="Camera3D"]
+shape = SubResource("ConvexPolygonShape3D_4c471")
+target_position = Vector3(0, 0, 0)
+collision_mask = 9
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -150,3 +147,6 @@ cull_mask = 4
 
 [node name="BloodParticle" parent="." instance=ExtResource("3_2jwvc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0796954, 1.71023, -2.15973)
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_36xg5")

@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf2j4odbo7gxn"]
+[gd_scene load_steps=7 format=3 uid="uid://bf2j4odbo7gxn"]
 
 [ext_resource type="PackedScene" uid="uid://bglh3swar8w2a" path="res://enemy/enemy.tscn" id="1_3ul8q"]
 [ext_resource type="PackedScene" uid="uid://blumwkmxvodk5" path="res://models/pacov.glb" id="2_qp0i4"]
-[ext_resource type="AudioStream" uid="uid://c31d7fwaayil3" path="res://sounds/mouse-squeaks-68287.mp3" id="2_t728c"]
 [ext_resource type="AudioStream" uid="uid://d1va702il7jak" path="res://sounds/rat_death.ogg" id="3_h87j2"]
 [ext_resource type="Texture2D" uid="uid://bl5j1pdd1gyaq" path="res://models/pacov_pcov.png" id="5_lmio7"]
 
@@ -21,7 +20,6 @@ axis_lock_angular_y = true
 follow_range = 20.0
 damage = 5.0
 max_health = 1.0
-sound = ExtResource("2_t728c")
 death_sound = ExtResource("3_h87j2")
 
 [node name="CollisionShape3D" parent="." index="0"]

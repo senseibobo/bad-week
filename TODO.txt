@@ -1,7 +1,7 @@
-- add animations
 - make better lightning
 - make stuff in the room change a little in between dreams
-- fix enemy AI
+- fix top doctor AI idk what's wrong
+- fix particles
 
 ideas for levels:
 - church
