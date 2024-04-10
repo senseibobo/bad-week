@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://drlmar75yjna1"]
+
+[ext_resource type="PackedScene" uid="uid://5fmmncsm7408" path="res://levels/level3_hodnik/layout.tscn" id="1_lovk8"]
+[ext_resource type="PackedScene" uid="uid://b33ffx2tmr73u" path="res://player/player.tscn" id="2_1rb7b"]
+[ext_resource type="Script" path="res://levels/level3_hodnik/tpArea.gd" id="3_1s2xs"]
+[ext_resource type="PackedScene" uid="uid://d3aohfcfqfigm" path="res://interactables/exit_door/fake_exit_door.tscn" id="4_86hve"]
+[ext_resource type="PackedScene" uid="uid://csce5is60lrmw" path="res://models/vrata.glb" id="5_2p3c6"]
+
+[sub_resource type="Environment" id="Environment_t1isk"]
+ambient_light_source = 2
+ambient_light_color = Color(0.537255, 0.537255, 0.537255, 1)
+tonemap_exposure = 1.3
+ssao_enabled = true
+ssao_radius = 0.46
+ssao_intensity = 1.3
+ssao_power = 2.0
+ssao_detail = 0.0
+ssao_horizon = 0.0
+ssao_sharpness = 0.0
+sdfgi_use_occlusion = true
+sdfgi_cascades = 2
+sdfgi_max_distance = 51.2
+sdfgi_energy = 2.46
+sdfgi_normal_bias = 0.615
+glow_enabled = true
+glow_blend_mode = 0
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 5.1
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.266
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t8s67"]
+size = Vector3(2.5, 6, 2.5)
+
+[node name="Level3HodnikNew" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t1isk")
+
+[node name="Layout" parent="." instance=ExtResource("1_lovk8")]
+
+[node name="Player" parent="." instance=ExtResource("2_1rb7b")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.720718, 2.32937, -18.6124)
+
+[node name="Areas" type="Node3D" parent="."]
+
+[node name="TP1" type="Area3D" parent="Areas"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("3_1s2xs")
+teleport_x = 19.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TP1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -0.75)
+shape = SubResource("BoxShape3D_t8s67")
+
+[node name="TP2" type="Area3D" parent="Areas"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("3_1s2xs")
+teleport_x = 19.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TP2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1539, 2.74268, -15.838)
+shape = SubResource("BoxShape3D_t8s67")
+
+[node name="TP3" type="Area3D" parent="Areas"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("3_1s2xs")
+teleport_x = -19.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TP3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.6993, 2.74268, -12.8198)
+shape = SubResource("BoxShape3D_t8s67")
+
+[node name="TP4" type="Area3D" parent="Areas"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("3_1s2xs")
+teleport_z = -6.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TP4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 2.5, -45.1508)
+shape = SubResource("BoxShape3D_t8s67")
+
+[node name="TP5" type="Area3D" parent="Areas"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("3_1s2xs")
+teleport_x = -54.0
+teleport_z = -60.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/TP5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.75, 2.5, 7.81704)
+shape = SubResource("BoxShape3D_t8s67")
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="exit_door" parent="Objects" instance=ExtResource("4_86hve")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.75, 1.46717, -71.9767)
+
+[node name="vrata" parent="." instance=ExtResource("5_2p3c6")]
+transform = Transform3D(-0.0323358, 0, -0.498953, 0, 0.5, 0, 0.498953, 0, -0.0323358, 0.694842, 1.49661, -23.9456)
+
+[editable path="Objects/exit_door"]

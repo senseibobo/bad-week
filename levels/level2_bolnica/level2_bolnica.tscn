@@ -82,10 +82,10 @@ text = "Our electritian had an accident so he wasn't able to repair these flicke
 If anyone knows how to repair them, please do!"
 
 [node name="Polica" parent="Objects" instance=ExtResource("16_eotqh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11816, 1.55, -8.1959)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.43888, 1.55, -8.1959)
 
 [node name="Polica2" parent="Objects" instance=ExtResource("16_eotqh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11816, 1.55, -6.68425)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.43888, 1.55, -6.68425)
 
 [node name="Closet" parent="Objects" instance=ExtResource("14_hx0x3")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.96862, 4.55, 1.84248)
@@ -196,9 +196,6 @@ flickering = false
 [node name="doctor" parent="Enemies" instance=ExtResource("4_kcmq5")]
 transform = Transform3D(0.363446, 0, -0.931614, 0, 1, 0, 0.931614, 0, 0.363446, 6.16654, 4.71084, -2.9145)
 attack_range = 2.0
-
-[node name="CollisionShape3D" parent="Enemies/doctor" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.540179, 0)
 
 [node name="Cube" parent="Enemies/doctor/doktor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1.22, -1.76, 0, 0.215, 1, 0, -0.925, -1.22)
