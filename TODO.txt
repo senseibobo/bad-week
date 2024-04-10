@@ -1,12 +1,9 @@
-- make better lightning
 - make stuff in the room change a little in between dreams
-- fix top doctor AI idk what's wrong
-- fix particles
+- portals
 
 ideas for levels:
 - church
 - train/bus station
 - city
-- confusing hallway stuff
 - level dedicated to the kid
 - dream inside a dream
