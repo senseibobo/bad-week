@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bl5j1pdd1gyaq" path="res://models/pacov_pcov.png" id="5_lmio7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3w1j6"]
-size = Vector3(0.107178, 0.167969, 0.0842285)
+size = Vector3(0.2229, 0.22876, 0.8125)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6v0yj"]
 resource_name = "pacov"
@@ -23,7 +23,7 @@ max_health = 1.0
 death_sound = ExtResource("3_h87j2")
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, -7.91631e-08, -2.08616e-07, 7.91631e-08, 1, 1.22953e-08, 2.08616e-07, -1.22953e-08, 1, -0.014, 0.115936, -6.54836e-10)
+transform = Transform3D(1, -7.91631e-08, -2.08616e-07, 7.91631e-08, 1, 1.22953e-08, 2.08616e-07, -1.22953e-08, 1, -0.014, 0.115936, -7.71252e-10)
 shape = SubResource("BoxShape3D_3w1j6")
 
 [node name="RayCast3D" parent="." index="3"]

@@ -328,6 +328,7 @@ skeleton = NodePath("")
 
 [node name="Cube_001" type="MeshInstance3D" parent="mrtvi"]
 transform = Transform3D(0.238909, 0.967719, -0.0802651, 0.182474, 0.036445, 0.982535, 0.953743, -0.249382, -0.167877, -4.09569, 0, -3.77841)
+visible = false
 mesh = SubResource("ArrayMesh_0lkj1")
 skeleton = NodePath("")
 
@@ -337,7 +338,7 @@ mesh = SubResource("ArrayMesh_pck38")
 skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.384921, -0.598738, 0.702388, -0.0434934, 0.748413, 0.661806, -0.921924, -0.285292, 0.262039, 5.89971, 1.865, -4.29871)
+transform = Transform3D(0.384921, -0.598738, 0.702388, -0.0434934, 0.748413, 0.661806, -0.921924, -0.285293, 0.262039, 5.89971, 1.865, -4.29871)
 fov = 61.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

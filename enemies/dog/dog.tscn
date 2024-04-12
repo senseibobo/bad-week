@@ -9,14 +9,19 @@ size = Vector3(0.327148, 0.612486, 0.628906)
 
 [node name="dog" instance=ExtResource("1_ryplj")]
 max_health = 1.0
-sound = ExtResource("2_3pnsm")
 
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.304459, 0)
 shape = SubResource("BoxShape3D_qpimr")
 
+[node name="RayCast3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.492845, 0.195666)
+
 [node name="ker" parent="." index="4" instance=ExtResource("2_pc2ur")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
-[node name="RayCast3D" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.492845, 0.195666)
+[node name="NoticeSound" parent="." index="5"]
+stream = ExtResource("2_3pnsm")
+volume_db = 24.065
+pitch_scale = 1.2
+bus = &"Louder"

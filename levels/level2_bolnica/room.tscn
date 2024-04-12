@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdahbg3jtigdp"]
+[gd_scene load_steps=4 format=3 uid="uid://cdahbg3jtigdp"]
 
 [ext_resource type="PackedScene" uid="uid://drisq4xjnwlhu" path="res://levels/base_room/prelevel_room.tscn" id="1_yurak"]
+[ext_resource type="PackedScene" uid="uid://ccjwp5o8n7w6u" path="res://models/beer.blend" id="2_5l70i"]
+[ext_resource type="PackedScene" uid="uid://c6o6eh2odgyj1" path="res://models/trash.tscn" id="3_h08rn"]
 
 [node name="Room" instance=ExtResource("1_yurak")]
 
@@ -8,10 +10,34 @@
 dream_scene = "res://levels/level2_bolnica/level2_bolnica.tscn"
 
 [node name="Reso" parent="soba" index="4"]
-transform = Transform3D(0.0299497, 0, 0.398877, 0, 0.4, 0, -0.398877, 0, 0.0299497, -0.776379, 0.447772, 0.604198)
+transform = Transform3D(0.0299497, 0, 0.398877, 0, 0.4, 0, -0.398877, 0, 0.0299497, -0.6111, -0.00268554, 0.604198)
+
+[node name="DoorLeft" parent="soba/Closet/Ormar" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.301176, 0.386703, -0.472548)
 
 [node name="letter" parent="." index="4"]
 text = "Dear Zoran,
 You have an outstanding medical bill of $521700.97. You will hear from us if you don't pay up."
+
+[node name="sleeping_pills" parent="." index="5"]
+transform = Transform3D(-1.41936e-09, 0.0324711, -0.0380214, -0.05, -2.18557e-09, 0, -1.66197e-09, 0.0380214, 0.0324711, 0.654544, 0.036539, -1.20195)
+
+[node name="beer" parent="." index="7" instance=ExtResource("2_5l70i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.67789, 0.959003, -1.93413)
+
+[node name="beer2" parent="." index="8" instance=ExtResource("2_5l70i")]
+transform = Transform3D(0.983844, 0, 0.179025, 0, 1, 0, -0.179025, 0, 0.983844, 1.67789, 0.959003, -2.01661)
+
+[node name="beer3" parent="." index="9" instance=ExtResource("2_5l70i")]
+transform = Transform3D(-4.30052e-08, -1, -7.82545e-09, 0.983844, -4.37114e-08, 0.179025, -0.179025, 0, 0.983844, 0.965151, 0.87108, -2.01661)
+
+[node name="beer4" parent="." index="10" instance=ExtResource("2_5l70i")]
+transform = Transform3D(0.178993, -0.0190055, -0.983667, 0.00340248, 0.999819, -0.0186985, 0.983844, -8.14118e-09, 0.179025, 0.829255, 0.95849, -2.28975)
+
+[node name="beer5" parent="." index="11" instance=ExtResource("2_5l70i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78603, 0.149671, 1.55966)
+
+[node name="Trash" parent="." index="12" instance=ExtResource("3_h08rn")]
+transform = Transform3D(0.456801, 0, 0, 0, 0.717173, 0, 0, 0, 0.881626, -1.69122, 0.821606, 0.269882)
 
 [editable path="soba/Closet"]

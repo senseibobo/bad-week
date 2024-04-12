@@ -25,6 +25,7 @@ func transition(
 		tween.tween_interval(wait)
 	tween.tween_callback(emit_signal.bind("transitioned"))
 	tween.tween_property($ColorRect, "color:a", 0.0, time)
+		
 
 
 func transition_to(
@@ -35,8 +36,9 @@ func transition_to(
 	wait: float = 0.2
 	):
 	if transitioning: return
-	transitioning = true
-	transition(time,start_color,end_color,wait)
-	await transitioned
-	transitioning = false
+	if time > 0:
+		transitioning = true
+		transition(time,start_color,end_color,wait)
+		await transitioned
+		transitioning = false
 	get_tree().change_scene_to_file(file)

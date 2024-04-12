@@ -15,7 +15,7 @@ radius = 0.2
 height = 1.7
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4c471"]
-points = PackedVector3Array(0.2, 0, 0, 0, 0.3, 0, -0.2, 0, 0, 0, -0.3, 0, 0, 0, -2.01)
+points = PackedVector3Array(0.2, 0, 0, 0, 0.3, 0, -0.2, 0, 0, 0, -0.3, 0, 0, 0, -3)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ifvps"]
 shader = ExtResource("2_rnbs1")
@@ -64,7 +64,12 @@ shape = SubResource("ConvexPolygonShape3D_4c471")
 target_position = Vector3(0, 0, 0)
 collision_mask = 9
 
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D/ShapeCast3D"]
+target_position = Vector3(0, 0, -3)
+collision_mask = 9
+
 [node name="HUD" type="CanvasLayer" parent="."]
+layer = 10
 
 [node name="InteractLabel" type="Label" parent="HUD"]
 anchors_preset = 15

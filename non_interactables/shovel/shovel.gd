@@ -4,6 +4,7 @@ extends Node3D
 signal attacked
 
 var hit_shape_cast: ShapeCast3D
+@export var ignore_walls: bool = false
 
 @onready var ricochet_sound_player: AudioStreamPlayer = $Ricochet
 
@@ -15,13 +16,21 @@ func _ready():
 	
 
 func hit():
-	if hit_shape_cast.get_collision_count() > 0:
-		var collider = hit_shape_cast.get_collider(0)
-		if collider is Enemy:
-			collider.hit()
+	var colliders: Array
+	for i in hit_shape_cast.get_collision_count():
+		var collider = hit_shape_cast.get_collider(i)
+		if is_instance_valid(collider):
+			colliders.append(collider)
+	
+	if colliders.size() > 0:
+		var raycast_target = Global.player.attack_ray_cast.get_collider()
+		if colliders[0].has_method("hit"):
+			colliders[0].hit()
 			Global.player.blood_particle.emitting = true
-			# TODO particles
-		else:
+		elif raycast_target.has_method("hit"):
+			raycast_target.hit()
+			Global.player.blood_particle.emitting = true
+		elif not ignore_walls:
 			$AnimationPlayer.play("ricochet")
 			ricochet_sound_player.play()
 			var p = $GPUParticles3D.duplicate(false)

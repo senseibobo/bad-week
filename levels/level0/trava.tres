@@ -4,8 +4,6 @@
 load_path = "res://.godot/imported/grass.png-c637977c146fec1b1e97e5c999cb4594.s3tc.ctex"
 
 [resource]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
+depth_draw_mode = 1
 albedo_texture = SubResource("CompressedTexture2D_loeew")
-uv1_scale = Vector3(133.475, 133.475, 133.475)
+uv1_scale = Vector3(133.555, 133.555, 133.555)

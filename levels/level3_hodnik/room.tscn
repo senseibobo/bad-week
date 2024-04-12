@@ -1,16 +1,89 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci5v43na35veq"]
+[gd_scene load_steps=3 format=3 uid="uid://ci5v43na35veq"]
 
 [ext_resource type="PackedScene" uid="uid://drisq4xjnwlhu" path="res://levels/base_room/prelevel_room.tscn" id="1_mh26b"]
+[ext_resource type="PackedScene" uid="uid://ccjwp5o8n7w6u" path="res://models/beer.blend" id="2_o24rx"]
 
 [node name="Room" instance=ExtResource("1_mh26b")]
 
 [node name="bed" parent="soba" index="1"]
 dream_scene = "res://levels/level3_hodnik/level3_hodnik.tscn"
 
+[node name="frizider" parent="soba" index="2"]
+transform = Transform3D(0.491471, 0, 0.0919585, 0, 0.5, 0, -0.0919585, 0, 0.491471, -0.805964, -1.19209e-07, 0.357057)
+
+[node name="washing_machine" parent="soba" index="3"]
+transform = Transform3D(0.429617, 0, 0.133901, 0, 0.45, 0, -0.133901, 0, 0.429617, -0.719221, 2.79397e-09, 0.790314)
+
 [node name="Reso" parent="soba" index="4"]
-transform = Transform3D(0.0299497, 0, 0.398877, 0, 0.4, 0, -0.398877, 0, 0.0299497, -0.776379, 0.447772, 0.604198)
+transform = Transform3D(0.399944, 0, 0.00666683, 0, 0.4, 0, -0.00666683, 0, 0.399944, 0.426384, 0.447772, -1.4175)
+
+[node name="Computer" parent="soba" index="5"]
+transform = Transform3D(0.140266, 0, -0.0531559, 0, 0.15, 0, 0.0531559, 0, 0.140266, 0.778106, 0.433166, -1.47437)
+
+[node name="table" parent="soba" index="6"]
+transform = Transform3D(0.467552, 0, -0.177186, 0, 0.5, 0, 0.177186, 0, 0.467552, 0.663256, 2.79397e-09, -1.41713)
+
+[node name="Closet" parent="soba" index="10"]
+transform = Transform3D(0.473586, 0, -0.160364, 0, 0.5, 0, 0.160364, 0, 0.473586, -0.795901, 0.00787445, -0.238042)
 
 [node name="letter" parent="." index="4"]
 text = "Dear Zoran,
 I am divorcing you and taking the kids.
 - your (not) wife"
+
+[node name="sleeping_pills" parent="." index="5"]
+transform = Transform3D(0.0473586, 0, -0.0160364, 0, 0.05, 0, 0.0160364, 0, 0.0473586, -1.5364, 0.464359, 0.441005)
+
+[node name="beer" parent="." index="7" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.976544, 0.876801, -1.6395)
+
+[node name="beer2" parent="." index="8" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 0.0527543, 0.998608, 0, -0.998608, 0.0527543, 0.337207, 0.630925, -2.04828)
+
+[node name="beer3" parent="." index="9" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46951, 1.72762, 1.64173)
+
+[node name="beer4" parent="." index="10" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50758, 1.72762, 1.58205)
+
+[node name="beer5" parent="." index="11" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54856, 1.72762, 1.64173)
+
+[node name="beer6" parent="." index="12" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58663, 1.72762, 1.58205)
+
+[node name="beer7" parent="." index="13" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46951, 1.72762, 1.49934)
+
+[node name="beer8" parent="." index="14" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50758, 1.72762, 1.43966)
+
+[node name="beer9" parent="." index="15" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54856, 1.72762, 1.49934)
+
+[node name="beer10" parent="." index="16" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58663, 1.72762, 1.43966)
+
+[node name="beer11" parent="." index="17" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70016, 1.72762, 1.64173)
+
+[node name="beer12" parent="." index="18" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73823, 1.72762, 1.58205)
+
+[node name="beer13" parent="." index="19" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77921, 1.72762, 1.64173)
+
+[node name="beer14" parent="." index="20" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.81728, 1.72762, 1.58205)
+
+[node name="beer15" parent="." index="21" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70016, 1.72762, 1.49934)
+
+[node name="beer16" parent="." index="22" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73823, 1.72762, 1.43966)
+
+[node name="beer17" parent="." index="23" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77921, 1.72762, 1.49934)
+
+[node name="beer18" parent="." index="24" instance=ExtResource("2_o24rx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.81728, 1.72762, 1.43966)

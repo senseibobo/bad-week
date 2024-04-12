@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c8qidkjekdcst"]
+[gd_scene load_steps=29 format=3 uid="uid://c8qidkjekdcst"]
 
 [ext_resource type="Texture2D" uid="uid://b3lp4kyfubem0" path="res://textures/cgaxis_hdri_skies_01_60-1.jpg" id="1_1b02v"]
 [ext_resource type="PackedScene" uid="uid://b33ffx2tmr73u" path="res://player/player.tscn" id="3_7rhkb"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://xx16qewpucxt" path="res://enemies/doctor/doctor.tscn" id="18_dqoth"]
 [ext_resource type="PackedScene" uid="uid://2gb6ohyshfdo" path="res://enemies/dog/dog.tscn" id="20_hsrex"]
 [ext_resource type="PackedScene" uid="uid://dtv4xsbfixhv0" path="res://enemies/kid/kid.tscn" id="21_wenvb"]
-[ext_resource type="PackedScene" uid="uid://cr3x1ry71ujb5" path="res://enemies/mom/mom.tscn" id="22_ickd0"]
+[ext_resource type="PackedScene" uid="uid://cr3x1ry71ujb5" path="res://enemies/mom_old/mom.tscn" id="22_ickd0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_74l7n"]
 size = Vector3(30, 1, 30)
@@ -45,6 +45,14 @@ geometry_parsed_geometry_type = 2
 geometry_source_geometry_mode = 1
 geometry_source_group_name = &"navmesh"
 agent_radius = 0.75
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymy1y"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_2hif8"]
+material = SubResource("StandardMaterial3D_ymy1y")
 
 [node name="Test" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.139782, -0.193794, 3.11335)
@@ -116,7 +124,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72706, 0.5, -5.24566)
 [node name="doctor" parent="." instance=ExtResource("18_dqoth")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12346, 0.5, -7.17774)
 attack_range = 2.0
-follow_range = 10.0
 
 [node name="dog" parent="." instance=ExtResource("20_hsrex")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.257616, 0.5, -4.9656)
@@ -129,5 +136,9 @@ follow_range = 100.0
 [node name="Mom" parent="." instance=ExtResource("22_ickd0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.10055, 0.5, -3.09187)
 follow_range = 100.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5037, 0)
+mesh = SubResource("BoxMesh_2hif8")
 
 [editable path="Polica"]

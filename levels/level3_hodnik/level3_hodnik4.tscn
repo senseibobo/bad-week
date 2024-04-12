@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtbynihrf4w3m"]
+
+[ext_resource type="PackedScene" uid="uid://b33ffx2tmr73u" path="res://player/player.tscn" id="2_qgdin"]
+[ext_resource type="PackedScene" uid="uid://c78jdpmcd2q48" path="res://levels/layout_arena.tscn" id="5_4yw2m"]
+[ext_resource type="Script" path="res://levels/level3_hodnik/tp_area_arena.gd" id="5_s4els"]
+[ext_resource type="PackedScene" uid="uid://bwgpwk18ixuvu" path="res://interactables/shovel_pickup/shovel_pickup.tscn" id="5_x0kae"]
+[ext_resource type="PackedScene" uid="uid://2slf6vhuxhm7" path="res://enemies/mom/mom.tscn" id="6_8b82e"]
+[ext_resource type="Script" path="res://levels/level3_hodnik/overlay.gd" id="6_un4fb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gyckg"]
+size = Vector3(3.085, 2.055, 5.345)
+
+[sub_resource type="Environment" id="Environment_kf6be"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.309804, 0.309804, 0.309804, 1)
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.1967
+fog_height_density = 4.4365
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.155
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r4rhf"]
+size = Vector3(59, 100, 59)
+
+[node name="Level3Hodnik4" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("2_qgdin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 13.102)
+frozen = true
+
+[node name="ShapeCast3D" parent="Player/Camera3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.587685, -2.87839)
+shape = SubResource("BoxShape3D_gyckg")
+collision_mask = 8
+
+[node name="Shovel" parent="Player/HUD/SubViewportContainer/SubViewport" index="0"]
+ignore_walls = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kf6be")
+
+[node name="ShovelPickup" parent="." instance=ExtResource("5_x0kae")]
+transform = Transform3D(0.0205074, -0.0972481, -0.995049, -0.997282, 0.0684643, -0.0272445, 0.0707748, 0.992903, -0.0955796, 0.010318, 0.152496, 11.6128)
+
+[node name="Overlay" type="CanvasLayer" parent="."]
+script = ExtResource("6_un4fb")
+
+[node name="ColorRect" type="ColorRect" parent="Overlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TPArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("5_s4els")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TPArea"]
+shape = SubResource("BoxShape3D_r4rhf")
+
+[node name="Layout" parent="." instance=ExtResource("5_4yw2m")]
+
+[node name="Mom" parent="." instance=ExtResource("6_8b82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[connection signal="interacted" from="ShovelPickup" to="Overlay" method="_shovel_interacted"]
+[connection signal="interacted" from="ShovelPickup" to="Mom" method="_commence_start"]
+[connection signal="interacted" from="ShovelPickup" to="Player" method="set" binds= ["frozen", false]]
+
+[editable path="Player"]

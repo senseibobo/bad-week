@@ -1,5 +1,6 @@
 - make stuff in the room change a little in between dreams
 - portals
+- shockwave 
 
 ideas for levels:
 - church

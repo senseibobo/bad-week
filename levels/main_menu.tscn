@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdoba25ejebje"]
+[gd_scene load_steps=3 format=3 uid="uid://cdoba25ejebje"]
 
 [ext_resource type="Script" path="res://levels/main_menu.gd" id="1_esls8"]
+[ext_resource type="Texture2D" uid="uid://cm4y2qyhphh2l" path="res://textures/badweek.png" id="2_40361"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,20 +12,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_esls8")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -10.0
+offset_right = 1510.0
+offset_bottom = 830.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_40361")
+expand_mode = 1
+
 [node name="start" type="Button" parent="."]
 layout_mode = 0
 offset_left = 135.0
-offset_top = 121.0
+offset_top = 113.0
 offset_right = 181.0
-offset_bottom = 152.0
+offset_bottom = 144.0
 text = "start"
 
 [node name="quit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 136.0
-offset_top = 178.0
+offset_top = 170.0
 offset_right = 182.0
-offset_bottom = 209.0
+offset_bottom = 201.0
 text = "quit"
 
 [node name="Label" type="Label" parent="."]

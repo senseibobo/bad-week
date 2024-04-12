@@ -1,0 +1,256 @@
+[gd_scene load_steps=14 format=3 uid="uid://c78jdpmcd2q48"]
+
+[ext_resource type="Shader" path="res://shaders/fog.gdshader" id="1_gqdmm"]
+[ext_resource type="Texture2D" uid="uid://dbpama3ysd80h" path="res://models/textures/marble.png" id="2_r2ktn"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s4al8"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ihdaf"]
+seamless = true
+noise = SubResource("FastNoiseLite_s4al8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d30dg"]
+render_priority = 0
+shader = ExtResource("1_gqdmm")
+shader_parameter/scale = Vector2(3, 1)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/speed = -0.5
+shader_parameter/lower_strength = 0.0
+shader_parameter/noise = SubResource("NoiseTexture2D_ihdaf")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_18k6u"]
+material = SubResource("ShaderMaterial_d30dg")
+flip_faces = true
+top_radius = 25.0
+bottom_radius = 25.0
+height = 25.0
+radial_segments = 12
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l20el"]
+render_priority = 0
+shader = ExtResource("1_gqdmm")
+shader_parameter/scale = Vector2(3, 1)
+shader_parameter/offset = Vector2(0.62, 0)
+shader_parameter/speed = 1.5
+shader_parameter/lower_strength = 0.0
+shader_parameter/noise = SubResource("NoiseTexture2D_ihdaf")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hc3f2"]
+material = SubResource("ShaderMaterial_l20el")
+flip_faces = true
+top_radius = 27.0
+bottom_radius = 27.0
+height = 27.0
+radial_segments = 12
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bsgk5"]
+render_priority = 0
+shader = ExtResource("1_gqdmm")
+shader_parameter/scale = Vector2(3, 1)
+shader_parameter/offset = Vector2(0.62, 0)
+shader_parameter/speed = -2.0
+shader_parameter/lower_strength = 0.31
+shader_parameter/noise = SubResource("NoiseTexture2D_ihdaf")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i0eok"]
+material = SubResource("ShaderMaterial_bsgk5")
+flip_faces = true
+top_radius = 29.0
+bottom_radius = 29.0
+height = 29.0
+radial_segments = 12
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqs10"]
+albedo_color = Color(1, 0.0235294, 0.0509804, 1)
+albedo_texture = ExtResource("2_r2ktn")
+uv1_scale = Vector3(48, 48, 48)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xkslb"]
+lightmap_size_hint = Vector2i(1774, 891)
+add_uv2 = true
+size = Vector3(177, 0.01, 177)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w7qg8"]
+data = PackedVector3Array(0, 0.0005, 50, 43.3013, 0.0005, 25, 0, 0, 50, 43.3013, 0.0005, 25, 43.3013, 0, 25, 0, 0, 50, 43.3013, 0.0005, 25, 43.3013, 0.0005, -25, 43.3013, 0, 25, 43.3013, 0.0005, -25, 43.3013, 0, -25, 43.3013, 0, 25, 43.3013, 0.0005, -25, 0, 0.0005, -50, 43.3013, 0, -25, 0, 0.0005, -50, 0, 0, -50, 43.3013, 0, -25, 0, 0.0005, -50, -43.3013, 0.0005, -25, 0, 0, -50, -43.3013, 0.0005, -25, -43.3013, 0, -25, 0, 0, -50, -43.3013, 0.0005, -25, -43.3013, 0.0005, 25, -43.3013, 0, -25, -43.3013, 0.0005, 25, -43.3013, 0, 25, -43.3013, 0, -25, -43.3013, 0.0005, 25, 0, 0.0005, 50, -43.3013, 0, 25, 0, 0.0005, 50, 0, 0, 50, -43.3013, 0, 25, 0, 0, 50, 43.3013, 0, 25, 0, -0.0005, 50, 43.3013, 0, 25, 43.3013, -0.0005, 25, 0, -0.0005, 50, 43.3013, 0, 25, 43.3013, 0, -25, 43.3013, -0.0005, 25, 43.3013, 0, -25, 43.3013, -0.0005, -25, 43.3013, -0.0005, 25, 43.3013, 0, -25, 0, 0, -50, 43.3013, -0.0005, -25, 0, 0, -50, 0, -0.0005, -50, 43.3013, -0.0005, -25, 0, 0, -50, -43.3013, 0, -25, 0, -0.0005, -50, -43.3013, 0, -25, -43.3013, -0.0005, -25, 0, -0.0005, -50, -43.3013, 0, -25, -43.3013, 0, 25, -43.3013, -0.0005, -25, -43.3013, 0, 25, -43.3013, -0.0005, 25, -43.3013, -0.0005, -25, -43.3013, 0, 25, 0, 0, 50, -43.3013, -0.0005, 25, 0, 0, 50, 0, -0.0005, 50, -43.3013, -0.0005, 25, 0, 0.0005, 0, 43.3013, 0.0005, 25, 0, 0.0005, 50, 0, 0.0005, 0, 43.3013, 0.0005, -25, 43.3013, 0.0005, 25, 0, 0.0005, 0, 0, 0.0005, -50, 43.3013, 0.0005, -25, 0, 0.0005, 0, -43.3013, 0.0005, -25, 0, 0.0005, -50, 0, 0.0005, 0, -43.3013, 0.0005, 25, -43.3013, 0.0005, -25, 0, 0.0005, 0, 0, 0.0005, 50, -43.3013, 0.0005, 25, 0, -0.0005, 0, 0, -0.0005, 50, 43.3013, -0.0005, 25, 0, -0.0005, 0, 43.3013, -0.0005, 25, 43.3013, -0.0005, -25, 0, -0.0005, 0, 43.3013, -0.0005, -25, 0, -0.0005, -50, 0, -0.0005, 0, 0, -0.0005, -50, -43.3013, -0.0005, -25, 0, -0.0005, 0, -43.3013, -0.0005, -25, -43.3013, -0.0005, 25, 0, -0.0005, 0, -43.3013, -0.0005, 25, 0, -0.0005, 50)
+
+[node name="Layout" type="Node3D"]
+
+[node name="AllFogs" type="Node3D" parent="."]
+
+[node name="Fogs" type="Node3D" parent="AllFogs"]
+
+[node name="Fog1" type="MeshInstance3D" parent="AllFogs/Fogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.3375, 0)
+mesh = SubResource("CylinderMesh_18k6u")
+skeleton = NodePath("../../../..")
+
+[node name="Fog2" type="MeshInstance3D" parent="AllFogs/Fogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.3375, 0)
+mesh = SubResource("CylinderMesh_hc3f2")
+skeleton = NodePath("../../../..")
+
+[node name="Fog3" type="MeshInstance3D" parent="AllFogs/Fogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.3375, 0)
+mesh = SubResource("CylinderMesh_i0eok")
+skeleton = NodePath("../../../..")
+
+[node name="Fogs2" type="Node3D" parent="AllFogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 59)
+
+[node name="Fog1" type="MeshInstance3D" parent="AllFogs/Fogs2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.3375, 0)
+mesh = SubResource("CylinderMesh_18k6u")
+skeleton = NodePath("../../../..")
+
+[node name="Fog2" type="MeshInstance3D" parent="AllFogs/Fogs2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.3375, 0)
+mesh = SubResource("CylinderMesh_hc3f2")
+skeleton = NodePath("../../../..")
+
+[node name="Fog3" type="MeshInstance3D" parent="AllFogs/Fogs2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.3375, 0)
+mesh = SubResource("CylinderMesh_i0eok")
+skeleton = NodePath("../../../..")
+
+[node name="Fogs3" type="Node3D" parent="AllFogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -59)
+
+[node name="Fog1" type="MeshInstance3D" parent="AllFogs/Fogs3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.3375, 0)
+mesh = SubResource("CylinderMesh_18k6u")
+skeleton = NodePath("../../../..")
+
+[node name="Fog2" type="MeshInstance3D" parent="AllFogs/Fogs3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.3375, 0)
+mesh = SubResource("CylinderMesh_hc3f2")
+skeleton = NodePath("../../../..")
+
+[node name="Fog3" type="MeshInstance3D" parent="AllFogs/Fogs3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.3375, 0)
+mesh = SubResource("CylinderMesh_i0eok")
+skeleton = NodePath("../../../..")
+
+[node name="Fogs4" type="Node3D" parent="AllFogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, 0, 0)
+
+[node name="Fog1" type="MeshInstance3D" parent="AllFogs/Fogs4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.3375, 0)
+mesh = SubResource("CylinderMesh_18k6u")
+skeleton = NodePath("../../../..")
+
+[node name="Fog2" type="MeshInstance3D" parent="AllFogs/Fogs4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.3375, 0)
+mesh = SubResource("CylinderMesh_hc3f2")
+skeleton = NodePath("../../../..")
+
+[node name="Fog3" type="MeshInstance3D" parent="AllFogs/Fogs4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.3375, 0)
+mesh = SubResource("CylinderMesh_i0eok")
+skeleton = NodePath("../../../..")
+
+[node name="Fogs5" type="Node3D" parent="AllFogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, 0, 59)
+
+[node name="Fog1" type="MeshInstance3D" parent="AllFogs/Fogs5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.3375, 0)
+mesh = SubResource("CylinderMesh_18k6u")
+skeleton = NodePath("../../../..")
+
+[node name="Fog2" type="MeshInstance3D" parent="AllFogs/Fogs5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.3375, 0)
+mesh = SubResource("CylinderMesh_hc3f2")
+skeleton = NodePath("../../../..")
+
+[node name="Fog3" type="MeshInstance3D" parent="AllFogs/Fogs5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.3375, 0)
+mesh = SubResource("CylinderMesh_i0eok")
+skeleton = NodePath("../../../..")
+
+[node name="Fogs6" type="Node3D" parent="AllFogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, 0, -59)
+
+[node name="Fog1" type="MeshInstance3D" parent="AllFogs/Fogs6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.3375, 0)
+mesh = SubResource("CylinderMesh_18k6u")
+skeleton = NodePath("../../../..")
+
+[node name="Fog2" type="MeshInstance3D" parent="AllFogs/Fogs6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.3375, 0)
+mesh = SubResource("CylinderMesh_hc3f2")
+skeleton = NodePath("../../../..")
+
+[node name="Fog3" type="MeshInstance3D" parent="AllFogs/Fogs6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.3375, 0)
+mesh = SubResource("CylinderMesh_i0eok")
+skeleton = NodePath("../../../..")
+
+[node name="Fogs7" type="Node3D" parent="AllFogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 0, 0)
+
+[node name="Fog1" type="MeshInstance3D" parent="AllFogs/Fogs7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.3375, 0)
+mesh = SubResource("CylinderMesh_18k6u")
+skeleton = NodePath("../../../..")
+
+[node name="Fog2" type="MeshInstance3D" parent="AllFogs/Fogs7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.3375, 0)
+mesh = SubResource("CylinderMesh_hc3f2")
+skeleton = NodePath("../../../..")
+
+[node name="Fog3" type="MeshInstance3D" parent="AllFogs/Fogs7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.3375, 0)
+mesh = SubResource("CylinderMesh_i0eok")
+skeleton = NodePath("../../../..")
+
+[node name="Fogs8" type="Node3D" parent="AllFogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 0, 59)
+
+[node name="Fog1" type="MeshInstance3D" parent="AllFogs/Fogs8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.3375, 0)
+mesh = SubResource("CylinderMesh_18k6u")
+skeleton = NodePath("../../../..")
+
+[node name="Fog2" type="MeshInstance3D" parent="AllFogs/Fogs8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.3375, 0)
+mesh = SubResource("CylinderMesh_hc3f2")
+skeleton = NodePath("../../../..")
+
+[node name="Fog3" type="MeshInstance3D" parent="AllFogs/Fogs8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.3375, 0)
+mesh = SubResource("CylinderMesh_i0eok")
+skeleton = NodePath("../../../..")
+
+[node name="Fogs9" type="Node3D" parent="AllFogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 0, -59)
+
+[node name="Fog1" type="MeshInstance3D" parent="AllFogs/Fogs9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.3375, 0)
+mesh = SubResource("CylinderMesh_18k6u")
+skeleton = NodePath("../../../..")
+
+[node name="Fog2" type="MeshInstance3D" parent="AllFogs/Fogs9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.3375, 0)
+mesh = SubResource("CylinderMesh_hc3f2")
+skeleton = NodePath("../../../..")
+
+[node name="Fog3" type="MeshInstance3D" parent="AllFogs/Fogs9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.3375, 0)
+mesh = SubResource("CylinderMesh_i0eok")
+skeleton = NodePath("../../../..")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+material_override = SubResource("StandardMaterial3D_gqs10")
+mesh = SubResource("BoxMesh_xkslb")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_w7qg8")

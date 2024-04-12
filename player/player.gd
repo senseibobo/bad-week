@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export var sensitivity: float = 0.6
 @export var max_health: float = 100
 @export var fall_death: bool = true
+@export var frozen: bool = false
 @export var has_shovel: bool = false:
 	set(value):
 		has_shovel = value
@@ -28,6 +29,7 @@ var lamps: int = 0
 @onready var hud: CanvasLayer = $HUD
 @onready var interact_label: Label = $HUD/InteractLabel
 @onready var attack_shape_cast: ShapeCast3D = $Camera3D/ShapeCast3D
+@onready var attack_ray_cast: RayCast3D = $Camera3D/ShapeCast3D/RayCast3D
 @onready var blood_hp_indicator: ColorRect = $HUD/Blood
 @onready var health: float = max_health
 @onready var blood_particle = $BloodParticle
@@ -53,7 +55,7 @@ func _process(delta):
 
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and not frozen:
 		camera.rotate_x(-sensitivity*event.relative.y/100.0)
 		camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, -90, 90)
 		rotate_y(-sensitivity*event.relative.x/100.0)
@@ -71,6 +73,7 @@ func _process_interacting():
 		interact()
 
 func _process_movement(delta):
+	if frozen: return
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		

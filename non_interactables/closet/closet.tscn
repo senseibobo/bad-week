@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://buiv7op0jykph"]
+[gd_scene load_steps=17 format=3 uid="uid://buiv7op0jykph"]
 
+[ext_resource type="Script" path="res://non_interactables/closet/closet.gd" id="1_5o74u"]
 [ext_resource type="Texture2D" uid="uid://cxy2vbi6pb64f" path="res://models/closet_texture.png" id="1_x7snp"]
 [ext_resource type="Script" path="res://non_interactables/closet/closet_door.gd" id="2_63xog"]
 [ext_resource type="Script" path="res://interactables/interactable.gd" id="3_rcx0b"]
@@ -122,6 +123,7 @@ size = Vector3(0.0404053, 2.19834, 1)
 size = Vector3(0.546631, 2.19904, 0.0712891)
 
 [node name="Closet" type="StaticBody3D" groups=["navmesh"]]
+script = ExtResource("1_5o74u")
 
 [node name="Ormar" type="Node3D" parent="."]
 
@@ -180,5 +182,7 @@ shape = SubResource("BoxShape3D_mliox")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10603, -0.469602)
 shape = SubResource("BoxShape3D_mliox")
 
+[connection signal="interacted" from="Ormar/DoorLeft/Interactable" to="." method="toggle_left"]
 [connection signal="interacted" from="Ormar/DoorLeft/Interactable" to="Ormar/DoorLeft" method="_on_interactable_interacted"]
+[connection signal="interacted" from="Ormar/DoorRight/Interactable2" to="." method="toggle_right"]
 [connection signal="interacted" from="Ormar/DoorRight/Interactable2" to="Ormar/DoorRight" method="_on_interactable_interacted"]

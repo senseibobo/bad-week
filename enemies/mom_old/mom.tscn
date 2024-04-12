@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr3x1ry71ujb5"]
+
+[ext_resource type="PackedScene" uid="uid://bglh3swar8w2a" path="res://enemy/enemy.tscn" id="1_2vin3"]
+[ext_resource type="PackedScene" uid="uid://x7wv7vj2s3tl" path="res://models/mama.glb" id="2_dkc5r"]
+[ext_resource type="AudioStream" uid="uid://cm6pkcgjr8dja" path="res://sounds/deep-strange-whoosh-183845.mp3" id="2_jnwts"]
+
+[node name="Mom" instance=ExtResource("1_2vin3")]
+max_health = 1.0
+sound = ExtResource("2_jnwts")
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04436, 0)
+
+[node name="MeshInstance3D" parent="." index="1"]
+visible = false
+
+[node name="RayCast3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.80418, 0)
+
+[node name="mama" parent="." index="5" instance=ExtResource("2_dkc5r")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 3.17746, 0)

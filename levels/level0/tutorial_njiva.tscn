@@ -140,7 +140,6 @@ shape = SubResource("ConcavePolygonShape3D_weab1")
 transform = Transform3D(-0.238652, 0, 0.971105, 0, 1, 0, -0.971105, 0, -0.238652, -4.65993, -0.0999994, -1.31895)
 material_override = ExtResource("3_sivhm")
 mesh = SubResource("ArrayMesh_fe7gq")
-skeleton = NodePath("")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Grass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65993, -0.0999994, -1.31895)

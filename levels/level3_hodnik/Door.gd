@@ -5,4 +5,5 @@ extends Interactable
 
 
 func on_interact(player):
+	super(player)
 	player.global_position = marker.global_position

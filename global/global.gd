@@ -2,6 +2,7 @@ extends Node
 
 var player: Player
 var old_scene: String
+var enemies: Array
 	
 
 func _input(event):
@@ -14,9 +15,18 @@ func _input(event):
 		get_tree().quit()
 
 
-func play_sound(stream: AudioStream, position: Vector3 = Vector3.ZERO):
+func play_sound(stream: AudioStream):
 	var stream_player = AudioStreamPlayer.new()
 	stream_player.stream = stream
 	add_child(stream_player)
+	stream_player.play()
+	stream_player.finished.connect(stream_player.queue_free)
+
+
+func play_sound_3d(stream: AudioStream, position: Vector3):
+	var stream_player = AudioStreamPlayer3D.new()
+	stream_player.stream = stream
+	add_child(stream_player)
+	stream_player.global_position = position
 	stream_player.play()
 	stream_player.finished.connect(stream_player.queue_free)

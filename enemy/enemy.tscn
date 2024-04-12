@@ -26,7 +26,6 @@ mesh = SubResource("CylinderMesh_el6j2")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.3
-debug_enabled = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 collision_mask = 3

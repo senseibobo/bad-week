@@ -7,6 +7,15 @@
 [node name="bed" parent="soba" index="1"]
 dream_scene = "res://levels/level1_suma/level1_suma.tscn"
 
+[node name="washing_machine" parent="soba" index="3"]
+transform = Transform3D(0.443792, 0, 0.0744883, 0, 0.45, 0, -0.0744883, 0, 0.443792, -0.788885, 0, 0.792723)
+
+[node name="Reso" parent="soba" index="4"]
+transform = Transform3D(-0.281492, 0, 0.284187, 0, 0.4, 0, -0.284187, 0, -0.281492, -0.860517, 0.447772, 0.796502)
+
+[node name="Computer" parent="soba" index="5"]
+transform = Transform3D(0.147156, 0, -0.0290709, 0, 0.15, 0, 0.0290709, 0, 0.147156, 0.710845, 0.433166, -1.64516)
+
 [node name="letter" parent="." index="4"]
 text = "Dear Zoran,
 I'm sorry to say Žuća got hit by a car, he didn't make it."

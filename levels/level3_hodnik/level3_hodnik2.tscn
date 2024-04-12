@@ -6,4 +6,4 @@
 
 [node name="player" parent="." index="4"]
 alt = true
-alt_scene = "res://levels/level3_hodnik/level3_hodnik2.tscn"
+alt_scene = "res://levels/level3_hodnik/level3_hodnik3.tscn"
