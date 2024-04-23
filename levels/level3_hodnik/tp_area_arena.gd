@@ -18,11 +18,11 @@ func player_exited(player: Player):
 			or (angle > PI/4 and angle < 3*PI/4.0):
 		var s = sign(player.global_position.z)
 		player.global_position.z -= s*59.0
-		for e in Global.enemies:
-			e.global_position.z -= s*59.0
+		get_tree().call_group("MomTPMove", "translate", Vector3(0,0,-s*59))
+		get_tree().call_group("MomTPMoveAlt", "alt_translate", Vector3(0,0,-s*59))
 	else:
 		var s = sign(player.global_position.x)
 		player.global_position.x -= s*59.0
-		for e in Global.enemies:
-			e.global_position.x -= s*59.0
+		get_tree().call_group("MomTPMove", "translate", Vector3(-s*59,0,0))
+		get_tree().call_group("MomTPMoveAlt", "alt_translate", Vector3(-s*59,0,0))
 

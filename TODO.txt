@@ -1,6 +1,9 @@
 - make stuff in the room change a little in between dreams
 - portals
-- shockwave 
+- replace get_tree().create_timer()
+
+mom fight:
+- shockwave
 
 ideas for levels:
 - church

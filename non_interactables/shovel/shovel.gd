@@ -27,7 +27,7 @@ func hit():
 		if colliders[0].has_method("hit"):
 			colliders[0].hit()
 			Global.player.blood_particle.emitting = true
-		elif raycast_target.has_method("hit"):
+		elif is_instance_valid(raycast_target) and raycast_target.has_method("hit"):
 			raycast_target.hit()
 			Global.player.blood_particle.emitting = true
 		elif not ignore_walls:

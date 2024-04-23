@@ -61,7 +61,7 @@ uv1_offset = Vector3(1.13, 0.19, 0)
 [sub_resource type="SphereShape3D" id="SphereShape3D_6mtd1"]
 radius = 0.333
 
-[node name="Eye" type="CharacterBody3D"]
+[node name="Eye" type="CharacterBody3D" groups=["MomTPMove"]]
 collision_layer = 8
 collision_mask = 9
 script = ExtResource("1_agh2a")

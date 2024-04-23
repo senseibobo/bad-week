@@ -3,12 +3,14 @@ extends Node3D
 
 enum State {
 	IDLE,
-	ATTACK1
+	ATTACK1,
+	ATTACK2
 }
 
 
 @export var started: bool = false
 @export var max_hp: float = 300.0
+@export var fetus_scene: PackedScene
 
 var state: int = State.IDLE
 var timer: float = 0.0
@@ -17,6 +19,8 @@ var time: float = 0.0
 @onready var player: Player = Global.player
 @onready var eyes: Node3D = $Visuals/Eyes
 @onready var target_spot: Node3D = $Visuals/Body
+@onready var fetus_launcher: Marker3D = $Visuals/FetusLauncherPosition
+@onready var fetus_cast: RayCast3D = $FetusCast
 @onready var hp: float = max_hp
 var eye_positions: Array
 
@@ -27,7 +31,7 @@ func _ready():
 
 
 func _commence_start():
-	get_tree().create_timer(2.0).timeout.connect(start)
+	Tools.timer(2.0, self).connect(start)
 
 
 func _init_eye_positions():
@@ -41,7 +45,7 @@ func start():
 	tween.tween_property($UuuuuuuSound,"volume_db",0.0, 2.0).from(-80.0)
 	$UuuuuuuSound.play()
 	started = true
-	_change_state(State.ATTACK1)
+	_change_state(State.ATTACK2)
 
 
 func _process(delta):
@@ -72,12 +76,35 @@ func _change_state(new_state):
 	match state:
 		State.ATTACK1:
 			_start_attack1()
+		State.ATTACK2:
+			_start_attack2()
 
 
 func _start_attack1():
+	var count = 0
 	while state == State.ATTACK1:
+		count += 1
 		_launch_eye()
-		await get_tree().create_timer(2.0, false).timeout
+		if count >= 3:
+			_change_state(State.ATTACK2)
+		await Tools.timer(2.0, self)
+
+func _start_attack2(): # lauch exploding fetuses
+	for i in 2:
+		fetus_cast.global_position.x = Global.player.global_position.x
+		fetus_cast.global_position.z = Global.player.global_position.z
+		fetus_cast.force_raycast_update()
+		if fetus_cast.is_colliding():
+			var pos = fetus_cast.get_collision_point()
+			var fetus = fetus_scene.instantiate()
+			fetus.arrival_time = 2.0
+			get_parent().add_child(fetus)
+			fetus.global_position = fetus_launcher.global_position
+			fetus.start_position = fetus.global_position
+			fetus.target_position = pos
+		await Tools.timer(2.5, self)
+	_change_state(State.ATTACK1)
+		
 
 
 func _launch_eye():

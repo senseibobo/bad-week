@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://bjodx7nngvsg7"]
+[gd_scene load_steps=32 format=3 uid="uid://bjodx7nngvsg7"]
 
 [ext_resource type="Texture2D" uid="uid://b4s5cqbgemxff" path="res://models/lopata_woodtexture.png" id="1_0lgbm"]
 [ext_resource type="Script" path="res://non_interactables/shovel/shovel.gd" id="1_q300f"]
 [ext_resource type="Texture2D" uid="uid://dx5xtrvpx3r5w" path="res://models/lopata_rustymetal.png" id="2_koqnf"]
 [ext_resource type="Texture2D" uid="uid://0nawsshh3ldp" path="res://models/ruka_skin.png" id="4_3lnqv"]
+[ext_resource type="Texture2D" uid="uid://ci7uxomrbtdlh" path="res://models/lopata_rustymetal_normalmap.png" id="4_uoj7b"]
 [ext_resource type="Texture2D" uid="uid://lkp3vaau5hx0" path="res://models/desnaruka_skin.png" id="5_bjimj"]
 [ext_resource type="AudioStream" uid="uid://cxhj7nqeu10r5" path="res://sounds/shovel_ricochet.ogg" id="6_u6kat"]
 
@@ -20,6 +21,8 @@ cull_mode = 2
 albedo_color = Color(0.65098, 0.65098, 0.65098, 1)
 albedo_texture = ExtResource("2_koqnf")
 roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("4_uoj7b")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxj0h"]
 resource_name = "Rubber"

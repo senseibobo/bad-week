@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://global/global.gd"
 Transition="*res://global/transition/transition.tscn"
+Tools="*res://global/tools.gd"
 
 [display]
 
@@ -28,6 +29,15 @@ window/size/extend_to_title=true
 window/size/window_width_override=960
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+
+[editor]
+
+movie_writer/movie_file="S:/Godot Games/bad-week/movie/snimak.avi"
+movie_writer/fps=10
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/light_tools/plugin.cfg")
 
 [input]
 

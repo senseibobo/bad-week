@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bwtlrfnatuiwy"]
+[gd_scene load_steps=28 format=3 uid="uid://bwtlrfnatuiwy"]
 
 [ext_resource type="Script" path="res://levels/level3_hodnik/mrtvi.gd" id="1_hlgm1"]
 [ext_resource type="Texture2D" uid="uid://cocoj408vbu86" path="res://models/mrtvi_zena.png" id="2_6wvef"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b1rvus8os6pe1" path="res://models/grob_dirt.png" id="5_acybw"]
 [ext_resource type="Texture2D" uid="uid://b4s5cqbgemxff" path="res://models/lopata_woodtexture.png" id="6_x55r6"]
 [ext_resource type="Texture2D" uid="uid://dx5xtrvpx3r5w" path="res://models/lopata_rustymetal.png" id="7_dgmyv"]
+[ext_resource type="Texture2D" uid="uid://b7fj87scno0q4" path="res://models/holdnik_SLIK.png" id="8_6pn84"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkg2s"]
 resource_name = "Material.001"
@@ -385,3 +386,10 @@ transform = Transform3D(-3.72529e-09, 0.116754, -3.72529e-09, -0.116754, 3.72529
 layers = 3
 mesh = SubResource("ArrayMesh_puk0e")
 skeleton = NodePath("")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.453642, -1.71342, -4.19161e-08, 0, -7.81037e-08, 1, -1.53363, -0.506822, -1.23986e-08, 9.81239, 0.0777855, -2.00864)
+shaded = true
+texture = ExtResource("8_6pn84")
+region_enabled = true
+region_rect = Rect2(270.95, -2.86, 242, 128.26)

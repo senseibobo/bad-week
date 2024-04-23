@@ -3,6 +3,7 @@ extends Node
 var player: Player
 var old_scene: String
 var enemies: Array
+var camera: PlayerCamera
 	
 
 func _input(event):

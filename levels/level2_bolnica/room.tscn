@@ -12,9 +12,6 @@ dream_scene = "res://levels/level2_bolnica/level2_bolnica.tscn"
 [node name="Reso" parent="soba" index="4"]
 transform = Transform3D(0.0299497, 0, 0.398877, 0, 0.4, 0, -0.398877, 0, 0.0299497, -0.6111, -0.00268554, 0.604198)
 
-[node name="DoorLeft" parent="soba/Closet/Ormar" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.301176, 0.386703, -0.472548)
-
 [node name="letter" parent="." index="4"]
 text = "Dear Zoran,
 You have an outstanding medical bill of $521700.97. You will hear from us if you don't pay up."

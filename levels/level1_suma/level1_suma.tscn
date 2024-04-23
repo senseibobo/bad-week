@@ -30,7 +30,7 @@ sky_material = SubResource("PanoramaSkyMaterial_sjht5")
 [sub_resource type="Environment" id="Environment_labke"]
 background_mode = 2
 sky = SubResource("Sky_w6k0r")
-ambient_light_source = 2
+ambient_light_source = 1
 ambient_light_color = Color(0.713726, 1, 0.705882, 1)
 ambient_light_energy = 0.1
 tonemap_mode = 2
@@ -43,7 +43,6 @@ glow_strength = 0.25
 glow_blend_mode = 0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0905
-volumetric_fog_albedo = Color(0.811765, 1, 0.823529, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6pwuw"]
 albedo_color = Color(0.529412, 0.529412, 0.529412, 1)
@@ -75,11 +74,16 @@ script = ExtResource("1_3vmv5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-light_color = Color(0.776471, 0.890196, 1, 1)
-light_energy = 0.13
+light_color = Color(0.591403, 0.707484, 0.656896, 1)
+light_energy = 0.195
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 8.835
+shadow_opacity = 0.5
+shadow_blur = 1.605
+metadata/use_color_temperature = true
+metadata/color_temperature = 4100
+metadata/color_filter = Color(0, 0.859375, 1, 0.639216)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_labke")
@@ -317,6 +321,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7295, 0.802792, -46.9673)
 transform = Transform3D(0.048885, 0.131357, 0.990129, -0.937203, 0.348785, 0, -0.345342, -0.927952, 0.140158, -64.0372, 1.09108, -34.1006)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+visible = false
 navigation_mesh = SubResource("NavigationMesh_bk5pc")
 
 [node name="forestWalls" parent="." instance=ExtResource("12_8bue7")]

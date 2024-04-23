@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cawxikitjnb88"]
+[gd_scene load_steps=14 format=3 uid="uid://cawxikitjnb88"]
 
 [ext_resource type="Script" path="res://non_interactables/flickering_light.gd" id="1_y2rm3"]
 [ext_resource type="AudioStream" uid="uid://hgwpg1jrf8og" path="res://sounds/flickering_lamp.mp3" id="2_gukja"]
@@ -36,7 +36,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("./MeshInstance3D:visible")
+tracks/1/path = NodePath("Glowing:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -44,6 +44,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OmniLight3D:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
 }
 
 [sub_resource type="Animation" id="Animation_4l8hk"]
@@ -54,34 +66,22 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("Glowing:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.15, 0.2, 0.7, 0.75, 1.65, 1.7, 2.6, 2.65, 3.65, 3.7, 4.15, 4.2, 4.6, 4.65),
+"times": PackedFloat32Array(0.15, 0.3, 0.7, 0.85, 1.65, 1.8, 2.6, 2.75, 3.65, 3.8, 4.15, 4.3, 4.6, 4.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false, true, false, true, false, true, false, true, false, true, false]
 }
-tracks/1/type = "value"
+tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("./MeshInstance3D:visible")
+tracks/1/path = NodePath("AudioStreamPlayer3D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.15, 0.2, 0.7, 0.75, 1.65, 1.7, 2.6, 2.65, 3.65, 3.7, 4.15, 4.2, 4.6, 4.65),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, false, true, false, true, false, true, false, true, false, true, false, true, false]
-}
-tracks/2/type = "audio"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer3D")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -89,7 +89,31 @@ tracks/2/keys = {
 }],
 "times": PackedFloat32Array(0.1)
 }
-tracks/2/use_blend = true
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OmniLight3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OmniLight3D:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.15, 0.3, 0.68, 0.7, 0.85, 1.6, 1.65, 1.8, 2.55, 2.6, 2.75, 3.6, 3.65, 3.8, 4.05, 4.15, 4.3, 4.55, 4.6, 4.75, 5.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_aiudq"]
 resource_name = "turn_off"
@@ -109,7 +133,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("./MeshInstance3D:visible")
+tracks/1/path = NodePath("Glowing:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -118,6 +142,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OmniLight3D:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_pdnie"]
 resource_name = "turn_on"
@@ -125,7 +161,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/path = NodePath("Glowing:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -137,7 +173,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("./MeshInstance3D:visible")
+tracks/1/path = NodePath("OmniLight3D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -145,6 +181,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OmniLight3D:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yvko2"]
@@ -158,27 +206,36 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_fp2a3"]
 size = Vector3(1.07056, 0.0761719, 0.0810547)
 
+[sub_resource type="BoxMesh" id="BoxMesh_yk0gk"]
+
 [node name="FlickeringLight" type="Area3D"]
 collision_layer = 5
 script = ExtResource("1_y2rm3")
+metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Glowing" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0157566, 0)
 layers = 32
 cast_shadow = 0
 mesh = SubResource("BoxMesh_056d6")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="NotGlowing" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0157566, 0)
 layers = 32
 cast_shadow = 0
 mesh = SubResource("BoxMesh_vje74")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0776608, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.472401, 0)
+light_color = Color(0.95142, 0.949558, 1, 1)
 light_volumetric_fog_energy = 0.76
+light_size = 0.42
 light_cull_mask = 4294967263
 shadow_enabled = true
+shadow_bias = 0.05
+metadata/use_color_temperature = true
+metadata/color_temperature = 7000
+metadata/color_filter = Color(1, 1, 1, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -192,3 +249,7 @@ max_distance = 5.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.020402, 0)
 shape = SubResource("BoxShape3D_fp2a3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.37277)
+mesh = SubResource("BoxMesh_yk0gk")

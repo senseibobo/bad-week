@@ -18,4 +18,5 @@ void fragment() {
 	ALPHA = c.r + 0.2;
 	ALPHA += UV.y * lower_strength;
 	ALBEDO.rgb -= UV.y * lower_strength;
+	// -> -->  >= <=
 }

@@ -232,6 +232,15 @@ script = ExtResource("5_vjkst")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.645244, 1.61043, -0.0659386)
 shape = SubResource("BoxShape3D_p6r1t")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="door/vRAT"]
+transform = Transform3D(1.65563, 0, 0, 0, 1.65563, 0, 0, 0, 1.65563, -0.636206, 2.51076, 0.118176)
+light_energy = 0.385
+omni_range = 3.31
+omni_attenuation = 2.92817
+metadata/use_color_temperature = true
+metadata/color_temperature = 6500
+metadata/color_filter = Color(1, 1, 1, 0)
+
 [node name="exit" type="MeshInstance3D" parent="door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.72925, 0)
 mesh = SubResource("ArrayMesh_k54yn")

@@ -24,7 +24,7 @@ var gravity = 30.0
 var note_timer: float = 0.0
 var lamps: int = 0
 
-@onready var camera: Camera3D = $Camera3D
+@onready var camera: PlayerCamera = $Camera3D
 @onready var interact_raycast: RayCast3D = $Camera3D/InteractRaycast
 @onready var hud: CanvasLayer = $HUD
 @onready var interact_label: Label = $HUD/InteractLabel
@@ -106,6 +106,7 @@ func interact():
 
 
 func hit(damage: float):
+	camera.shake_screen(damage*0.65,10,0.3)
 	hit_sound_player.play()
 	health -= damage
 	_update_blood_hp_indicator()

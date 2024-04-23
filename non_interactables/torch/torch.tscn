@@ -266,12 +266,15 @@ frame_progress = 0.35619
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Fire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0323548, 0)
-light_color = Color(1, 0.835294, 0.494118, 1)
-light_energy = 2.23
+light_color = Color(1, 0.536739, 0.0545258, 1)
+light_energy = 2.0
 light_size = 0.155
 shadow_enabled = true
 omni_range = 16.0
 omni_attenuation = 1.51572
+metadata/use_color_temperature = true
+metadata/color_temperature = 2000
+metadata/color_filter = Color(1, 1, 1, 0)
 
 [node name="torch_stand" parent="." instance=ExtResource("2_kg0bh")]
 

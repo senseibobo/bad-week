@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwgpwk18ixuvu"]
+[gd_scene load_steps=11 format=3 uid="uid://bwgpwk18ixuvu"]
 
 [ext_resource type="Script" path="res://interactables/shovel_pickup/shovel_pickup.gd" id="1_urcgh"]
 [ext_resource type="Texture2D" uid="uid://b4s5cqbgemxff" path="res://models/lopata_woodtexture.png" id="2_gbfq1"]
 [ext_resource type="Texture2D" uid="uid://dx5xtrvpx3r5w" path="res://models/lopata_rustymetal.png" id="3_j5x55"]
+[ext_resource type="Texture2D" uid="uid://ci7uxomrbtdlh" path="res://models/lopata_rustymetal_normalmap.png" id="4_6pw3u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xig34"]
 size = Vector3(1.81226, 0.217041, 0.446289)
@@ -19,6 +20,9 @@ cull_mode = 2
 albedo_color = Color(0.933333, 0.933333, 0.933333, 1)
 albedo_texture = ExtResource("3_j5x55")
 roughness = 0.79
+normal_enabled = true
+normal_scale = 1.2
+normal_texture = ExtResource("4_6pw3u")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxj0h"]
 resource_name = "Rubber"

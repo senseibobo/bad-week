@@ -1,8 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://cumm1ylnipg7f"]
+[gd_scene load_steps=34 format=3 uid="uid://cumm1ylnipg7f"]
 
 [ext_resource type="Texture2D" uid="uid://bnwydowtiwt7h" path="res://textures/wall.png" id="1_n1rhr"]
 [ext_resource type="Texture2D" uid="uid://crn8yjpco8eyr" path="res://models/textures/tiles.png" id="2_c0p3b"]
 [ext_resource type="Texture2D" uid="uid://dbpama3ysd80h" path="res://models/textures/marble.png" id="3_b1ced"]
+[ext_resource type="Texture2D" uid="uid://b4mj6cob6hyms" path="res://models/textures/tiles_normalmap.png" id="3_edv8t"]
 [ext_resource type="Texture2D" uid="uid://bapmkwo71gnu" path="res://models/bolnickikrevet_bedsheets.png" id="4_0bdwj"]
 [ext_resource type="Texture2D" uid="uid://dy3wdinvow87x" path="res://textures/zavesa.png" id="5_p40ru"]
 [ext_resource type="Texture2D" uid="uid://cak5uvpwe4cqk" path="res://models/textures/hospital_ceiling.png" id="6_yaw83"]
@@ -97,6 +98,9 @@ resource_name = "Floor"
 cull_mode = 2
 albedo_texture = ExtResource("2_c0p3b")
 roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("3_edv8t")
+uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw3av"]
 resource_name = "Ceiling"
