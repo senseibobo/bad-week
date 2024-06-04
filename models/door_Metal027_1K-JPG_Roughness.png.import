@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxnulfa5wu0wn"
 path.s3tc="res://.godot/imported/door_Metal027_1K-JPG_Roughness.png-71e40e965c76b321f63052c4ff4f965c.s3tc.ctex"
+path.etc2="res://.godot/imported/door_Metal027_1K-JPG_Roughness.png-71e40e965c76b321f63052c4ff4f965c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/door_Metal027_1K-JPG_Roughness.png"
-dest_files=["res://.godot/imported/door_Metal027_1K-JPG_Roughness.png-71e40e965c76b321f63052c4ff4f965c.s3tc.ctex"]
+dest_files=["res://.godot/imported/door_Metal027_1K-JPG_Roughness.png-71e40e965c76b321f63052c4ff4f965c.s3tc.ctex", "res://.godot/imported/door_Metal027_1K-JPG_Roughness.png-71e40e965c76b321f63052c4ff4f965c.etc2.ctex"]
 
 [params]
 

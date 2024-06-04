@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1rvus8os6pe1"
 path.s3tc="res://.godot/imported/grob_dirt.png-eea5bc5aa752f21b4b8fdf94eafafe6f.s3tc.ctex"
+path.etc2="res://.godot/imported/grob_dirt.png-eea5bc5aa752f21b4b8fdf94eafafe6f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/grob_dirt.png"
-dest_files=["res://.godot/imported/grob_dirt.png-eea5bc5aa752f21b4b8fdf94eafafe6f.s3tc.ctex"]
+dest_files=["res://.godot/imported/grob_dirt.png-eea5bc5aa752f21b4b8fdf94eafafe6f.s3tc.ctex", "res://.godot/imported/grob_dirt.png-eea5bc5aa752f21b4b8fdf94eafafe6f.etc2.ctex"]
 
 [params]
 

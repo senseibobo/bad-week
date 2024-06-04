@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl5j1pdd1gyaq"
 path.s3tc="res://.godot/imported/pacov_pcov.png-591449e981575e630df31a07d9a253ad.s3tc.ctex"
+path.etc2="res://.godot/imported/pacov_pcov.png-591449e981575e630df31a07d9a253ad.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/pacov_pcov.png"
-dest_files=["res://.godot/imported/pacov_pcov.png-591449e981575e630df31a07d9a253ad.s3tc.ctex"]
+dest_files=["res://.godot/imported/pacov_pcov.png-591449e981575e630df31a07d9a253ad.s3tc.ctex", "res://.godot/imported/pacov_pcov.png-591449e981575e630df31a07d9a253ad.etc2.ctex"]
 
 [params]
 

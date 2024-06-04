@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bymc1chin4b2d"
 path.s3tc="res://.godot/imported/wheat.png-7ef263a866b00fd766b7f97b0db01c97.s3tc.ctex"
+path.etc2="res://.godot/imported/wheat.png-7ef263a866b00fd766b7f97b0db01c97.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/wheat.png"
-dest_files=["res://.godot/imported/wheat.png-7ef263a866b00fd766b7f97b0db01c97.s3tc.ctex"]
+dest_files=["res://.godot/imported/wheat.png-7ef263a866b00fd766b7f97b0db01c97.s3tc.ctex", "res://.godot/imported/wheat.png-7ef263a866b00fd766b7f97b0db01c97.etc2.ctex"]
 
 [params]
 

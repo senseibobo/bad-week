@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dq5kys7vvsqiw"
 path.s3tc="res://.godot/imported/mrtvi_dete.png-05c03fac0d84894e3436393632f65314.s3tc.ctex"
+path.etc2="res://.godot/imported/mrtvi_dete.png-05c03fac0d84894e3436393632f65314.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/mrtvi_dete.png"
-dest_files=["res://.godot/imported/mrtvi_dete.png-05c03fac0d84894e3436393632f65314.s3tc.ctex"]
+dest_files=["res://.godot/imported/mrtvi_dete.png-05c03fac0d84894e3436393632f65314.s3tc.ctex", "res://.godot/imported/mrtvi_dete.png-05c03fac0d84894e3436393632f65314.etc2.ctex"]
 
 [params]
 

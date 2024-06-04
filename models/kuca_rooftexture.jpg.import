@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckne2wktqdtr0"
 path.s3tc="res://.godot/imported/kuca_rooftexture.jpg-b34eeefcfcb8cd49b4065e01259dc9ee.s3tc.ctex"
+path.etc2="res://.godot/imported/kuca_rooftexture.jpg-b34eeefcfcb8cd49b4065e01259dc9ee.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/kuca_rooftexture.jpg"
-dest_files=["res://.godot/imported/kuca_rooftexture.jpg-b34eeefcfcb8cd49b4065e01259dc9ee.s3tc.ctex"]
+dest_files=["res://.godot/imported/kuca_rooftexture.jpg-b34eeefcfcb8cd49b4065e01259dc9ee.s3tc.ctex", "res://.godot/imported/kuca_rooftexture.jpg-b34eeefcfcb8cd49b4065e01259dc9ee.etc2.ctex"]
 
 [params]
 

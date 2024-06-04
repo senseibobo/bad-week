@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnfapiv7tjtbq"
 path.s3tc="res://.godot/imported/vesmasina_vesmasina.png-614205edd138b25d54d383ea26887057.s3tc.ctex"
+path.etc2="res://.godot/imported/vesmasina_vesmasina.png-614205edd138b25d54d383ea26887057.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/vesmasina_vesmasina.png"
-dest_files=["res://.godot/imported/vesmasina_vesmasina.png-614205edd138b25d54d383ea26887057.s3tc.ctex"]
+dest_files=["res://.godot/imported/vesmasina_vesmasina.png-614205edd138b25d54d383ea26887057.s3tc.ctex", "res://.godot/imported/vesmasina_vesmasina.png-614205edd138b25d54d383ea26887057.etc2.ctex"]
 
 [params]
 

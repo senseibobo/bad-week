@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1yjpun8wortu"
 path.s3tc="res://.godot/imported/forestWalls_suma.png-0fdc8622e821e35e62c7df9d8f0d6792.s3tc.ctex"
+path.etc2="res://.godot/imported/forestWalls_suma.png-0fdc8622e821e35e62c7df9d8f0d6792.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/forestWalls_suma.png"
-dest_files=["res://.godot/imported/forestWalls_suma.png-0fdc8622e821e35e62c7df9d8f0d6792.s3tc.ctex"]
+dest_files=["res://.godot/imported/forestWalls_suma.png-0fdc8622e821e35e62c7df9d8f0d6792.s3tc.ctex", "res://.godot/imported/forestWalls_suma.png-0fdc8622e821e35e62c7df9d8f0d6792.etc2.ctex"]
 
 [params]
 

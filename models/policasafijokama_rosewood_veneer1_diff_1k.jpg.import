@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd7i2fidanplr"
 path.s3tc="res://.godot/imported/policasafijokama_rosewood_veneer1_diff_1k.jpg-9b794ec5ddb8d8d52683af4c683994ee.s3tc.ctex"
+path.etc2="res://.godot/imported/policasafijokama_rosewood_veneer1_diff_1k.jpg-9b794ec5ddb8d8d52683af4c683994ee.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/policasafijokama_rosewood_veneer1_diff_1k.jpg"
-dest_files=["res://.godot/imported/policasafijokama_rosewood_veneer1_diff_1k.jpg-9b794ec5ddb8d8d52683af4c683994ee.s3tc.ctex"]
+dest_files=["res://.godot/imported/policasafijokama_rosewood_veneer1_diff_1k.jpg-9b794ec5ddb8d8d52683af4c683994ee.s3tc.ctex", "res://.godot/imported/policasafijokama_rosewood_veneer1_diff_1k.jpg-9b794ec5ddb8d8d52683af4c683994ee.etc2.ctex"]
 
 [params]
 

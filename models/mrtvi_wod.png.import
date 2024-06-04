@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1iftswtsm20m"
 path.s3tc="res://.godot/imported/mrtvi_wod.png-5f797370d09691b362d9af73a1f57d23.s3tc.ctex"
+path.etc2="res://.godot/imported/mrtvi_wod.png-5f797370d09691b362d9af73a1f57d23.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/mrtvi_wod.png"
-dest_files=["res://.godot/imported/mrtvi_wod.png-5f797370d09691b362d9af73a1f57d23.s3tc.ctex"]
+dest_files=["res://.godot/imported/mrtvi_wod.png-5f797370d09691b362d9af73a1f57d23.s3tc.ctex", "res://.godot/imported/mrtvi_wod.png-5f797370d09691b362d9af73a1f57d23.etc2.ctex"]
 
 [params]
 

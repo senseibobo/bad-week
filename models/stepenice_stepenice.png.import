@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxgns1o3nrkdr"
 path.s3tc="res://.godot/imported/stepenice_stepenice.png-8421ad8893f083237765152f2e2ba2f4.s3tc.ctex"
+path.etc2="res://.godot/imported/stepenice_stepenice.png-8421ad8893f083237765152f2e2ba2f4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/stepenice_stepenice.png"
-dest_files=["res://.godot/imported/stepenice_stepenice.png-8421ad8893f083237765152f2e2ba2f4.s3tc.ctex"]
+dest_files=["res://.godot/imported/stepenice_stepenice.png-8421ad8893f083237765152f2e2ba2f4.s3tc.ctex", "res://.godot/imported/stepenice_stepenice.png-8421ad8893f083237765152f2e2ba2f4.etc2.ctex"]
 
 [params]
 

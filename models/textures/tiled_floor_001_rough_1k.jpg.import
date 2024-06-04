@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4vow1kvtr11"
 path.s3tc="res://.godot/imported/tiled_floor_001_rough_1k.jpg-a6cd6e76872554f786f8ac4c06f8e284.s3tc.ctex"
+path.etc2="res://.godot/imported/tiled_floor_001_rough_1k.jpg-a6cd6e76872554f786f8ac4c06f8e284.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/textures/tiled_floor_001_rough_1k.jpg"
-dest_files=["res://.godot/imported/tiled_floor_001_rough_1k.jpg-a6cd6e76872554f786f8ac4c06f8e284.s3tc.ctex"]
+dest_files=["res://.godot/imported/tiled_floor_001_rough_1k.jpg-a6cd6e76872554f786f8ac4c06f8e284.s3tc.ctex", "res://.godot/imported/tiled_floor_001_rough_1k.jpg-a6cd6e76872554f786f8ac4c06f8e284.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ci7uxomrbtdlh"
 path.s3tc="res://.godot/imported/lopata_rustymetal_normalmap.png-43076a29551749948f13dc57b315368e.s3tc.ctex"
+path.etc2="res://.godot/imported/lopata_rustymetal_normalmap.png-43076a29551749948f13dc57b315368e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/lopata_rustymetal_normalmap.png"
-dest_files=["res://.godot/imported/lopata_rustymetal_normalmap.png-43076a29551749948f13dc57b315368e.s3tc.ctex"]
+dest_files=["res://.godot/imported/lopata_rustymetal_normalmap.png-43076a29551749948f13dc57b315368e.s3tc.ctex", "res://.godot/imported/lopata_rustymetal_normalmap.png-43076a29551749948f13dc57b315368e.etc2.ctex"]
 
 [params]
 

@@ -2,18 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyof4q23nxoqo"
-path.s3tc="res://.godot/imported/holdnik_soba.png-4abadadaf69143fca93d3be68b05e91c.s3tc.ctex"
+uid="uid://bm2ka0pn0d356"
+path.s3tc="res://.godot/imported/sajba.png-c251985dbcac5705c6b0da5464dd5897.s3tc.ctex"
+path.etc2="res://.godot/imported/sajba.png-c251985dbcac5705c6b0da5464dd5897.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://models/holdnik_soba.png"
-dest_files=["res://.godot/imported/holdnik_soba.png-4abadadaf69143fca93d3be68b05e91c.s3tc.ctex"]
+source_file="res://models/textures/sajba.png"
+dest_files=["res://.godot/imported/sajba.png-c251985dbcac5705c6b0da5464dd5897.s3tc.ctex", "res://.godot/imported/sajba.png-c251985dbcac5705c6b0da5464dd5897.etc2.ctex"]
 
 [params]
 

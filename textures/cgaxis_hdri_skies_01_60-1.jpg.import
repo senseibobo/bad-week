@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3lp4kyfubem0"
 path.s3tc="res://.godot/imported/cgaxis_hdri_skies_01_60-1.jpg-80cc788502c6915d418d9f0c67f5e099.s3tc.ctex"
+path.etc2="res://.godot/imported/cgaxis_hdri_skies_01_60-1.jpg-80cc788502c6915d418d9f0c67f5e099.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/cgaxis_hdri_skies_01_60-1.jpg"
-dest_files=["res://.godot/imported/cgaxis_hdri_skies_01_60-1.jpg-80cc788502c6915d418d9f0c67f5e099.s3tc.ctex"]
+dest_files=["res://.godot/imported/cgaxis_hdri_skies_01_60-1.jpg-80cc788502c6915d418d9f0c67f5e099.s3tc.ctex", "res://.godot/imported/cgaxis_hdri_skies_01_60-1.jpg-80cc788502c6915d418d9f0c67f5e099.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://df7yg0kwvknvm"
 path.s3tc="res://.godot/imported/kljuc2_kljuc.png-c1d0aea925916fbfebbba48b6801a504.s3tc.ctex"
+path.etc2="res://.godot/imported/kljuc2_kljuc.png-c1d0aea925916fbfebbba48b6801a504.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/kljuc2_kljuc.png"
-dest_files=["res://.godot/imported/kljuc2_kljuc.png-c1d0aea925916fbfebbba48b6801a504.s3tc.ctex"]
+dest_files=["res://.godot/imported/kljuc2_kljuc.png-c1d0aea925916fbfebbba48b6801a504.s3tc.ctex", "res://.godot/imported/kljuc2_kljuc.png-c1d0aea925916fbfebbba48b6801a504.etc2.ctex"]
 
 [params]
 

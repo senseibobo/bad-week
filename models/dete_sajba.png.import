@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://odpgifih17hm"
 path.s3tc="res://.godot/imported/dete_sajba.png-756e81b37a6ce4ba194361bc4c78bd8e.s3tc.ctex"
+path.etc2="res://.godot/imported/dete_sajba.png-756e81b37a6ce4ba194361bc4c78bd8e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/dete_sajba.png"
-dest_files=["res://.godot/imported/dete_sajba.png-756e81b37a6ce4ba194361bc4c78bd8e.s3tc.ctex"]
+dest_files=["res://.godot/imported/dete_sajba.png-756e81b37a6ce4ba194361bc4c78bd8e.s3tc.ctex", "res://.godot/imported/dete_sajba.png-756e81b37a6ce4ba194361bc4c78bd8e.etc2.ctex"]
 
 [params]
 

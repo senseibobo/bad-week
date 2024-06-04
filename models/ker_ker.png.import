@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj4cbxv1dftla"
 path.s3tc="res://.godot/imported/ker_ker.png-c7b1bf7bd83e8e793f74428c62602cc2.s3tc.ctex"
+path.etc2="res://.godot/imported/ker_ker.png-c7b1bf7bd83e8e793f74428c62602cc2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/ker_ker.png"
-dest_files=["res://.godot/imported/ker_ker.png-c7b1bf7bd83e8e793f74428c62602cc2.s3tc.ctex"]
+dest_files=["res://.godot/imported/ker_ker.png-c7b1bf7bd83e8e793f74428c62602cc2.s3tc.ctex", "res://.godot/imported/ker_ker.png-c7b1bf7bd83e8e793f74428c62602cc2.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://k1oobmn4vcww"
 path.s3tc="res://.godot/imported/frizider_frizider.jpg-7495978ef1b7a3043996c2ce14763d03.s3tc.ctex"
+path.etc2="res://.godot/imported/frizider_frizider.jpg-7495978ef1b7a3043996c2ce14763d03.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/frizider_frizider.jpg"
-dest_files=["res://.godot/imported/frizider_frizider.jpg-7495978ef1b7a3043996c2ce14763d03.s3tc.ctex"]
+dest_files=["res://.godot/imported/frizider_frizider.jpg-7495978ef1b7a3043996c2ce14763d03.s3tc.ctex", "res://.godot/imported/frizider_frizider.jpg-7495978ef1b7a3043996c2ce14763d03.etc2.ctex"]
 
 [params]
 

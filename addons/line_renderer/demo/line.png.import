@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://mblnkohmbep2"
 path.s3tc="res://.godot/imported/line.png-e4e4fb05d8349a1c6dc0ba60d1b3e06e.s3tc.ctex"
+path.etc2="res://.godot/imported/line.png-e4e4fb05d8349a1c6dc0ba60d1b3e06e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/line_renderer/demo/line.png"
-dest_files=["res://.godot/imported/line.png-e4e4fb05d8349a1c6dc0ba60d1b3e06e.s3tc.ctex"]
+dest_files=["res://.godot/imported/line.png-e4e4fb05d8349a1c6dc0ba60d1b3e06e.s3tc.ctex", "res://.godot/imported/line.png-e4e4fb05d8349a1c6dc0ba60d1b3e06e.etc2.ctex"]
 
 [params]
 

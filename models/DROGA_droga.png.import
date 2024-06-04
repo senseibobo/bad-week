@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsie441loq1x8"
 path.s3tc="res://.godot/imported/DROGA_droga.png-880424168c874694fe82586c95e0e658.s3tc.ctex"
+path.etc2="res://.godot/imported/DROGA_droga.png-880424168c874694fe82586c95e0e658.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/DROGA_droga.png"
-dest_files=["res://.godot/imported/DROGA_droga.png-880424168c874694fe82586c95e0e658.s3tc.ctex"]
+dest_files=["res://.godot/imported/DROGA_droga.png-880424168c874694fe82586c95e0e658.s3tc.ctex", "res://.godot/imported/DROGA_droga.png-880424168c874694fe82586c95e0e658.etc2.ctex"]
 
 [params]
 

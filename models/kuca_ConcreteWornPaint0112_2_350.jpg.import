@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ljgnbtdf67rs"
 path.s3tc="res://.godot/imported/kuca_ConcreteWornPaint0112_2_350.jpg-0a1d50e6d33efd7b2b9a986490e63084.s3tc.ctex"
+path.etc2="res://.godot/imported/kuca_ConcreteWornPaint0112_2_350.jpg-0a1d50e6d33efd7b2b9a986490e63084.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/kuca_ConcreteWornPaint0112_2_350.jpg"
-dest_files=["res://.godot/imported/kuca_ConcreteWornPaint0112_2_350.jpg-0a1d50e6d33efd7b2b9a986490e63084.s3tc.ctex"]
+dest_files=["res://.godot/imported/kuca_ConcreteWornPaint0112_2_350.jpg-0a1d50e6d33efd7b2b9a986490e63084.s3tc.ctex", "res://.godot/imported/kuca_ConcreteWornPaint0112_2_350.jpg-0a1d50e6d33efd7b2b9a986490e63084.etc2.ctex"]
 
 [params]
 

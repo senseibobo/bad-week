@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://2re1nvsnkylr"
 path.s3tc="res://.godot/imported/mama_sajba.png-6dd4e74547bb39f5a524206a51f5832b.s3tc.ctex"
+path.etc2="res://.godot/imported/mama_sajba.png-6dd4e74547bb39f5a524206a51f5832b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/mama_sajba.png"
-dest_files=["res://.godot/imported/mama_sajba.png-6dd4e74547bb39f5a524206a51f5832b.s3tc.ctex"]
+dest_files=["res://.godot/imported/mama_sajba.png-6dd4e74547bb39f5a524206a51f5832b.s3tc.ctex", "res://.godot/imported/mama_sajba.png-6dd4e74547bb39f5a524206a51f5832b.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://3elu44vak5rk"
 path.s3tc="res://.godot/imported/beer.png-83d4ff708b84b80035011628c2a19774.s3tc.ctex"
+path.etc2="res://.godot/imported/beer.png-83d4ff708b84b80035011628c2a19774.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/textures/beer.png"
-dest_files=["res://.godot/imported/beer.png-83d4ff708b84b80035011628c2a19774.s3tc.ctex"]
+dest_files=["res://.godot/imported/beer.png-83d4ff708b84b80035011628c2a19774.s3tc.ctex", "res://.godot/imported/beer.png-83d4ff708b84b80035011628c2a19774.etc2.ctex"]
 
 [params]
 
