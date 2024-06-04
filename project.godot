@@ -13,7 +13,10 @@ config_version=5
 config/name="Bad Week"
 run/main_scene="res://levels/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/use_filter=false
+config/icon="res://textures/bad_week_icon.png"
+config/windows_native_icon="res://textures/bad_week_icon.ico"
 
 [autoload]
 
@@ -25,6 +28,7 @@ Tools="*res://global/tools.gd"
 
 window/size/viewport_width=320
 window/size/viewport_height=240
+window/size/mode=4
 window/size/extend_to_title=true
 window/size/window_width_override=960
 window/size/window_height_override=720

@@ -114,6 +114,7 @@ transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 
 
 [node name="bed" parent="Objects" instance=ExtResource("7_qf5pl")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 34.9595, 0.514619, 30.9135)
+unable = true
 
 [node name="Polica" parent="Objects" instance=ExtResource("6_xl8e8")]
 transform = Transform3D(-0.998835, 0, 0.0482571, 0, 1, 0, -0.0482571, 0, -0.998835, 43.0087, 0.514619, 30.1256)

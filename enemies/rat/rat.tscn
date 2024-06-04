@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bf2j4odbo7gxn"]
+[gd_scene load_steps=8 format=3 uid="uid://bf2j4odbo7gxn"]
 
 [ext_resource type="PackedScene" uid="uid://bglh3swar8w2a" path="res://enemy/enemy.tscn" id="1_3ul8q"]
 [ext_resource type="PackedScene" uid="uid://blumwkmxvodk5" path="res://models/pacov.glb" id="2_qp0i4"]
 [ext_resource type="AudioStream" uid="uid://d1va702il7jak" path="res://sounds/rat_death.ogg" id="3_h87j2"]
+[ext_resource type="AudioStream" uid="uid://c31d7fwaayil3" path="res://sounds/mouse-squeaks-68287.mp3" id="5_3v515"]
 [ext_resource type="Texture2D" uid="uid://bl5j1pdd1gyaq" path="res://models/pacov_pcov.png" id="5_lmio7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3w1j6"]
@@ -34,5 +35,8 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.015, 0, 0)
 
 [node name="Cube" parent="pacov" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_6v0yj")
+
+[node name="NoticeSound" parent="." index="5"]
+stream = ExtResource("5_3v515")
 
 [editable path="pacov"]

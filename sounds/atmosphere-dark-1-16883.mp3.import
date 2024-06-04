@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/atmosphere-dark-1-16883.mp3-bec1814af0b703363
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

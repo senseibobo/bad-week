@@ -8,6 +8,7 @@ var theme: Theme
 func _enter_tree():
 	add_inspector_plugin(light3d)
 	theme = get_editor_interface().get_base_control().theme
+	if not theme: return
 	if theme.has_icon("Light", "EditorIcons"):
 		old_icon = theme.get_icon("Light", "EditorIcons")
 	else:

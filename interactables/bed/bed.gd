@@ -14,7 +14,7 @@ func _ready():
 	
 func on_bed_interacted():
 	if unable:
-		Global.player.show_message("I can't sleep without my pills.")
+		Global.player.show_message("I probably shouldn't sleep.")
 	elif not Global.player.has_letter:
 		Global.player.show_message("I haven't checked my mail yet.")
 	elif not Global.player.has_pills:

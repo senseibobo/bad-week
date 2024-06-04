@@ -59,6 +59,8 @@ func _trail_points():
 		
 
 func explode():
+	$FetusSound.stop()
+	$FetusDeathSound.play()
 	Global.camera.shake_screen(20.0, 10.0, 0.5)
 	mesh.queue_free()
 	particles.emitting = false

@@ -97,7 +97,7 @@ func _start_attack2(): # lauch exploding fetuses
 		if fetus_cast.is_colliding():
 			var pos = fetus_cast.get_collision_point()
 			var fetus = fetus_scene.instantiate()
-			fetus.arrival_time = 2.0
+			fetus.arrival_time = 1.95
 			get_parent().add_child(fetus)
 			fetus.global_position = fetus_launcher.global_position
 			fetus.start_position = fetus.global_position

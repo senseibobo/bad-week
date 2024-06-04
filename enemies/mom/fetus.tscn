@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cayuuk41sr0q"]
+[gd_scene load_steps=19 format=3 uid="uid://cayuuk41sr0q"]
 
 [ext_resource type="Script" path="res://enemies/mom/fetus.gd" id="1_p7pbk"]
 [ext_resource type="PackedScene" uid="uid://dkxe7oq6ombxv" path="res://enemies/mom/shockwave.tscn" id="2_2f6og"]
 [ext_resource type="Texture2D" uid="uid://dkn7txafgn1k1" path="res://models/textures/flesh.png" id="3_1wm5p"]
 [ext_resource type="Script" path="res://addons/line_renderer/line_renderer.gd" id="3_3auxi"]
+[ext_resource type="AudioStream" uid="uid://csfm80bi8fxw4" path="res://sounds/fetus.ogg" id="5_4d6g7"]
+[ext_resource type="AudioStream" uid="uid://dwirbonrnlcmk" path="res://sounds/fetusdeath.ogg" id="6_33or0"]
 
 [sub_resource type="Gradient" id="Gradient_sqbuw"]
 
@@ -16,7 +18,7 @@ emission_enabled = true
 emission = Color(0.917969, 0.917969, 0.917969, 1)
 emission_energy_multiplier = 2.15
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_3dpok"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_uaf0o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0svlp"]
 resource_name = "Flesh"
@@ -101,7 +103,7 @@ shockwave_scene = ExtResource("2_2f6og")
 
 [node name="Trail" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_yn87d")
-mesh = SubResource("ImmediateMesh_3dpok")
+mesh = SubResource("ImmediateMesh_uaf0o")
 script = ExtResource("3_3auxi")
 start_thickness = 0.0
 end_thickness = 0.15
@@ -120,3 +122,14 @@ draw_pass_1 = SubResource("QuadMesh_b6dyp")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.382198, 0)
+
+[node name="FetusSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_4d6g7")
+volume_db = -15.685
+autoplay = true
+max_distance = 29.65
+
+[node name="FetusDeathSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_33or0")
+volume_db = -11.21
+max_distance = 29.65

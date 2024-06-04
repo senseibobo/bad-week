@@ -7,6 +7,7 @@ signal fixed
 @export var on: bool = true
 @export var flickering: bool = true
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@export var energy: float = 1.0
 
 
 func _ready():
@@ -31,6 +32,7 @@ func turn_on():
 	$AudioStreamPlayer3D.stop()
 	anim_player.play("turn_on")
 	on = true
+	$OmniLight3D.light_energy = energy
 	set("collision_layer", 0)
 	flickering = false
 	
@@ -38,6 +40,7 @@ func turn_on():
 
 func turn_off():
 	$AudioStreamPlayer3D.stop()
+	$OmniLight3D.light_energy = 0
 	anim_player.play("turn_off")
 	set("collision_layer", 0)
 	on = false
